@@ -11,12 +11,10 @@ module.exports = {
     extend: {
       letterSpacing: {
         tightest: "-.075em",
-
         tight: "-.025em",
         normal: "0",
         wide: ".025em",
         wider: ".05em",
-
         widest: ".25em",
       },
       fontSize: {
@@ -52,6 +50,7 @@ module.exports = {
           1: "#777777",
           2: "#96dd1e",
           3: "#c5c5c5",
+          white: "#ffffff",
         },
         gray: {
           1: "#c5c5c5",

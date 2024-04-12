@@ -2,12 +2,16 @@
 
 import "@mantine/carousel/styles.css";
 import { Carousel } from "@mantine/carousel";
-import { useRef } from "react";
-import Autoplay from "embla-carousel-autoplay";
+
 import mergeNames from "@/util/mergeNames";
 import LinkMore from "./LinkMore";
+
+// autoplay
+import { useRef } from "react";
+import Autoplay from "embla-carousel-autoplay";
+
 const CustomCarousel = ({ data }) => {
-  const autoplay = useRef(Autoplay({ delay: 1750 }));
+  const autoplay = useRef(Autoplay({ delay: 4000 }));
   return (
     <Carousel
       // Size
@@ -51,7 +55,11 @@ const CustomCarousel = ({ data }) => {
                 )}
               >
                 <div className={mergeNames("flex flex-col gap-5")}>
-                  <h1 className={mergeNames("smallTitle w-[70%] leading-7")}>
+                  <h1
+                    className={mergeNames(
+                      "smallTitle w-[70%] leading-7 text-white"
+                    )}
+                  >
                     {i.title}
                   </h1>
                   <LinkMore href="/" title="Read More" green />

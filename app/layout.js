@@ -6,6 +6,7 @@ import ScrollTop from "@/components/ui/ScrollTop";
 import "@mantine/core/styles.css";
 const inter = Inter({ subsets: ["latin"] });
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
+import Footer from "@/components/ui/Footer";
 
 export const metadata = {
   title: "Create Next App",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           {children}
           <ScrollTop />
+          <Footer />
         </MantineProvider>
       </body>
     </html>

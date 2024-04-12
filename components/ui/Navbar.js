@@ -1,5 +1,5 @@
 "use client";
-import { navigation, phone } from "@/constants";
+import { logo, navigation, phone } from "@/constants";
 import React, { useEffect, useState } from "react";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import mergeNames from "@/util/mergeNames";
@@ -51,7 +51,7 @@ const Navbar = () => {
         )}
       >
         <a className="w-[3rem] aspect-square bg-red-500" href="/">
-          {/* <img src={brainwave} width={190} height={40} alt="Brainwave" /> */}
+          <img src={logo} width={190} height={40} alt="Brainwave" />
         </a>
 
         <nav className={`flex   absolute left-[50%] -translate-x-[50%]`}>

@@ -4,15 +4,12 @@ import mergeNames from "@/util/mergeNames";
 import { LineTitle, SectionTitle } from "../ui/Title";
 import Container from "../ui/Container";
 import Achievements from "./Achievements";
+import { bg } from "@/constants";
 
 const AchievementHero = () => {
   return (
     <Container className={mergeNames("sectionGrid")}>
-      <img
-        src="./hero-bg.jpg"
-        className="aspect-[6/5] object-cover h-full"
-        alt=""
-      />
+      <img src={bg} className="aspect-[6/5] object-cover h-full" alt="" />
       <div className="inline-flex flex-col p-0 gap-14 lg:p-10">
         <SectionTitle section="FUN FACT" title="Our Achievements" />
 

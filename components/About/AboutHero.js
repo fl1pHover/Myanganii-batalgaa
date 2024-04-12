@@ -3,6 +3,7 @@ import LinkMore from "../ui/LinkMore";
 import mergeNames from "@/util/mergeNames";
 import { LineTitle, SectionTitle } from "../ui/Title";
 import Container from "../ui/Container";
+import { bg } from "@/constants";
 
 const AboutHero = () => {
   return (
@@ -14,7 +15,7 @@ const AboutHero = () => {
         />
 
         <div className="inline-flex flex-col gap-8 mb-10 lg:mb-0">
-          <p className="w-[80%]">
+          <p className="w-full lg:w-[80%]">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim.
@@ -22,11 +23,7 @@ const AboutHero = () => {
           <LinkMore href="/about" title="Learn More" />
         </div>
       </div>
-      <img
-        src="./hero-bg.jpg"
-        className="aspect-[6/5] object-cover h-full"
-        alt=""
-      />
+      <img src={bg} className="aspect-[6/5] object-cover h-full" alt="" />
     </Container>
   );
 };

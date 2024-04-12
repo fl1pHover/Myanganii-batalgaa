@@ -40,11 +40,11 @@ h6 {
   @apply text-color-0;
 }
 .sectionTitle {
-  @apply text-[24px] lg:text-[36px] font-extrabold text-color-0;
+  @apply text-[18px] lg:text-[36px] font-extrabold;
 }
 
 .smallTitle {
-  @apply font-semibold text-[16px] xl:text-[24px] text-white;
+  @apply font-semibold text-[16px] xl:text-[24px];
 }
 .container {
   @apply px-4 w-full lg:w-[750px] xl:w-[1170px] mx-auto;
@@ -56,6 +56,10 @@ h6 {
 
 .sectionGrid {
   @apply grid grid-cols-1 gap-10 lg:grid-cols-2;
+}
+
+.banner_container {
+  @apply mx-0 my-20 xl:mx-10;
 }
 
 .mantine-Carousel-indicators {
@@ -70,4 +74,9 @@ h6 {
 
 .mantine-Carousel-indicator[data-active="true"] {
   background-color: #96dd1e !important;
+}
+
+.controls svg {
+  background-color: red !important;
+  display: hidden !important;
 }

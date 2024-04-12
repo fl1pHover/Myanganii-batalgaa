@@ -5,7 +5,7 @@ import React from "react";
 import HeroCard from "./HeroCard";
 import LinkMore from "../ui/LinkMore";
 import Container from "../ui/Container";
-import { project } from "@/constants";
+import { bg, project } from "@/constants";
 import ScrollTop from "../ui/ScrollTop";
 
 const Hero = () => {
@@ -14,7 +14,7 @@ const Hero = () => {
       <div className="w-full h-[80vh] relative">
         <div className="w-full h-full">
           <img
-            src="./hero-bg.jpg"
+            src={bg}
             className="absolute top-0 left-0 z-0 object-cover w-full h-full"
             alt=""
           />
@@ -28,9 +28,7 @@ const Hero = () => {
               <h1 className="text-[18px] xs:text-[36px] font-medium">
                 Dream Comes True With Our Talented Architect
               </h1>
-              <a href="/" className="uppercase text-[16px] xs:text-[18px]">
-                Browse project
-              </a>
+
               <LinkMore href="/" title="Browse More" />
             </div>
           </Container>
