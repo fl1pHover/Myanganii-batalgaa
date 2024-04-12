@@ -5,6 +5,7 @@ import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import mergeNames from "@/util/mergeNames";
 import { Bookmark, Close, Hamburger } from "@/constants/icons";
 import styles from "@/constants/styles";
+import IconBundle from "./IconBundle";
 
 const Navbar = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
@@ -54,14 +55,14 @@ const Navbar = () => {
           <img src={logo} width={190} height={40} alt="Brainwave" />
         </a>
 
-        <nav className={`flex   absolute left-[50%] -translate-x-[50%]`}>
-          <div className="items-center hidden gap-10 lg:flex">
+        <nav className={`flex  absolute left-[50%] -translate-x-[50%]`}>
+          <div className="items-center hidden gap-5 lg:gap-20 md:flex">
             <h1 className="uppercase">
-              Call us:
+              Утас:
               <span className="font-bold"> {phone}</span>
             </h1>
             <h1 className="w-[2px] h-full bg-black"></h1>
-            <h1 className="uppercase">Call us: (+437) </h1>
+            <IconBundle />
           </div>
         </nav>
 
@@ -73,8 +74,8 @@ const Navbar = () => {
               "flex items-center gap-1 hover:text-color-2 py-2"
             )}
           >
-            <h1 className="hidden uppercase lg:block">Booking</h1>
-            <Bookmark />
+            <span className="hidden uppercase lg:block">Booking</span>
+            <Bookmark className="text-xl" />
           </a>
 
           <button
@@ -85,8 +86,8 @@ const Navbar = () => {
             href="#login"
             onClick={toggleNavigation}
           >
-            <h1 className="hidden uppercase lg:flex">Menu</h1>
-            <Hamburger />
+            <span className="hidden uppercase lg:flex">Menu</span>
+            <Hamburger className="text-xl" />
           </button>
         </div>
       </div>
