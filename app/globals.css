@@ -16,9 +16,9 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+} */
 body {
-  color: rgb(var(--foreground-rgb));
+  color: #555555;
   background: linear-gradient(
       to bottom,
       transparent,
@@ -27,8 +27,56 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-@layer utilities {
+/* @layer utilities {
   .text-balance {
     text-wrap: balance;
-  }
-} */
+  } */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-color-0;
+}
+.sectionTitle {
+  @apply text-[18px] lg:text-[36px] font-extrabold;
+}
+
+.smallTitle {
+  @apply font-semibold text-[16px] xl:text-[24px];
+}
+.container {
+  @apply px-4 w-full lg:w-[750px] xl:w-[1170px] mx-auto;
+}
+
+.hoverEffect {
+  @apply ease-in-out duration-400;
+}
+
+.sectionGrid {
+  @apply grid grid-cols-1 gap-10 lg:grid-cols-2;
+}
+
+.banner_container {
+  @apply mx-0 my-20 xl:mx-10;
+}
+
+.mantine-Carousel-indicators {
+  transform: translateY(80px);
+}
+.mantine-Carousel-indicator {
+  background-color: #c5c5c5 !important;
+}
+.mantine-Carousel-indicator:hover {
+  background-color: #96dd1e !important;
+}
+
+.mantine-Carousel-indicator[data-active="true"] {
+  background-color: #96dd1e !important;
+}
+
+.controls svg {
+  background-color: red !important;
+  display: hidden !important;
+}

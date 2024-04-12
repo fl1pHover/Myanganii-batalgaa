@@ -1,20 +1,20 @@
 "use client";
-import { navigation, phone } from "@/constants";
+import { logo, navigation, phone } from "@/constants";
 import React, { useEffect, useState } from "react";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import mergeNames from "@/util/mergeNames";
-import { Bookmark, Hamburger } from "@/constants/icons";
+import { Bookmark, Close, Hamburger } from "@/constants/icons";
 import styles from "@/constants/styles";
 
-const Header = () => {
+const Navbar = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
   const toggleNavigation = () => {
     if (openNavigation) {
       setOpenNavigation(false);
-      enablePageScroll();
+      // enablePageScroll();
     } else {
       setOpenNavigation(true);
-      disablePageScroll();
+      // disablePageScroll();
     }
   };
 
@@ -25,19 +25,16 @@ const Header = () => {
     setOpenNavigation(false);
   };
 
-  const TOP_OFFSET = 50;
   const [showBackground, setShowBackground] = useState(false);
 
+  const handleScroll = () => {
+    if (window.scrollY >= 50) {
+      setShowBackground(true);
+    } else {
+      setShowBackground(false);
+    }
+  };
   useEffect(() => {
-    const handleScroll = () => {
-      console.log(window.scrollY);
-      if (window.scrollY >= TOP_OFFSET) {
-        setShowBackground(true);
-      } else {
-        setShowBackground(false);
-      }
-    };
-
     window.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -50,11 +47,11 @@ const Header = () => {
       <div
         className={mergeNames(
           showBackground ? "bg-white shadow" : "bg-transparent",
-          "fixed top-0 left-0 z-50 flex items-center z-10 justify-between w-full px-5 py-8   lg:px-8 xl:px-20 max-lg:py-4"
+          "fixed top-0 left-0 flex items-center z-10 justify-between w-full duration-500 px-5 py-8 lg:px-8 xl:px-20 max-lg:py-4"
         )}
       >
-        <a className="w-[3rem] aspect-square bg-red-500" href="#hero">
-          {/* <img src={brainwave} width={190} height={40} alt="Brainwave" /> */}
+        <a className="w-[3rem] aspect-square bg-red-500" href="/">
+          <img src={logo} width={190} height={40} alt="Brainwave" />
         </a>
 
         <nav className={`flex   absolute left-[50%] -translate-x-[50%]`}>
@@ -68,27 +65,27 @@ const Header = () => {
           </div>
         </nav>
 
-        <div className="flex items-center gap-4 ">
+        <div className="flex items-center gap-4 font-bold">
           <a
             href="#signup"
             className={mergeNames(
-              styles.hoverEffect,
-              "flex items-center gap-1 hover:text-color-2 "
+              "hoverEffect",
+              "flex items-center gap-1 hover:text-color-2 py-2"
             )}
           >
-            <span className="hidden uppercase lg:block">Booking</span>
+            <h1 className="hidden uppercase lg:block">Booking</h1>
             <Bookmark />
           </a>
 
           <button
             className={mergeNames(
-              "flex items-center gap-1 hover:text-color-2",
-              styles.hoverEffect
+              "hoverEffect",
+              "flex items-center gap-1 hover:text-color-2 py-2"
             )}
             href="#login"
             onClick={toggleNavigation}
           >
-            <span className="hidden uppercase lg:flex">Menu</span>
+            <h1 className="hidden uppercase lg:flex">Menu</h1>
             <Hamburger />
           </button>
         </div>
@@ -97,30 +94,37 @@ const Header = () => {
       <div
         className={mergeNames(
           openNavigation
-            ? "fixed top-0 left-0 right-0 z-50 h-[100vh] bg-white transition ease-in"
+            ? "fixed top-0 left-0 right-0 z-50 h-[100vh] bg-white transition ease-in duration-400"
             : "flex ml-auto"
         )}
       >
         <button
-          className={
-            openNavigation
-              ? "absolute z-10 flex ml-auto top-10 right-10"
-              : "ml-auto hidden"
-          }
+          className={mergeNames(
+            "hoverEffect",
+            openNavigation ? " flex " : "ml-auto hidden",
+            "absolute z-10 ml-auto top-10 right-10 py-5 hover:text-color-2"
+          )}
           href="#login"
           onClick={toggleNavigation}
         >
-          <Hamburger />
+          <Close className="text-[50px]" />
         </button>
         <div
           className={mergeNames(
-            openNavigation
-              ? "relative flex flex-col items-center h-full justify-center m-auto z-2"
-              : "invisible transition ease-in"
+            openNavigation ? "relative" : "hidden ",
+            "flex flex-col items-center h-full justify-center m-auto z-2 gap-4"
           )}
         >
           {navigation.map((item) => (
-            <a key={item.id} href={item.url} onClick={handleClick}>
+            <a
+              key={item.id}
+              href={item.url}
+              className={mergeNames(
+                "hoverEffect",
+                "text-[25px] uppercase font-bold text-color-1 hover:text-color-2 cursor-pointer"
+              )}
+              onClick={handleClick}
+            >
               {item.title}
             </a>
           ))}
@@ -130,4 +134,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;
