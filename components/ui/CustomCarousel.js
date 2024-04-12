@@ -2,19 +2,33 @@
 
 import "@mantine/carousel/styles.css";
 import { Carousel } from "@mantine/carousel";
-import { projects } from "@/constants";
+import { useRef } from "react";
+import Autoplay from "embla-carousel-autoplay";
 import mergeNames from "@/util/mergeNames";
 import LinkMore from "./LinkMore";
 const CustomCarousel = ({ data }) => {
+  const autoplay = useRef(Autoplay({ delay: 1750 }));
   return (
     <Carousel
-      withIndicators
+      // Size
       height={400}
-      slideSize="25%"
+      slideSize={{
+        base: "100%",
+        xs: "75%",
+        sm: "50%",
+        md: "33%",
+        lg: "30%",
+        xl: "25%",
+      }}
       slideGap="xl"
-      loop
       align="center"
+      withIndicators
       slidesToScroll={1}
+      loop
+      // AUto play plugin zaaval tatna ingenee
+      plugins={[autoplay.current]}
+      onMouseEnter={autoplay.current.stop}
+      onMouseLeave={autoplay.current.reset}
     >
       {data.map((i) => (
         <Carousel.Slide key={i.id}>
@@ -26,19 +40,22 @@ const CustomCarousel = ({ data }) => {
             />
             <div
               className={mergeNames(
-                "bg-black/80 absolute top-0 left-0 w-full h-full opacity-0 group-hover:opacity-100 duration-500 border-4 border-transparent group-hover:border-color-2"
+                "group group-hover:bg-black/90",
+                "bg-color-0/60 absolute top-0 left-0 w-full h-full duration-500 border-4 border-transparent group-hover:border-color-2"
               )}
             >
               <div
                 className={mergeNames(
-                  "flex flex-col justify-between h-full p-5 xl:p-10 opacity-0 duration-400 group-hover:opacity-100 z-1 ",
-                  "-translate-y-10 group-hover:translate-y-0 "
+                  "flex flex-col justify-end h-full px-10 pt-10  duration-400  z-1 ",
+                  "pb-10 group-hover:pb-16"
                 )}
               >
-                <div className={mergeNames("flex flex-col gap-5 xl:gap-10")}>
-                  <h1 className={mergeNames("smallTitle")}>{i.title}</h1>
+                <div className={mergeNames("flex flex-col gap-5")}>
+                  <h1 className={mergeNames("smallTitle w-[70%] leading-7")}>
+                    {i.title}
+                  </h1>
+                  <LinkMore href="/" title="Read More" green />
                 </div>
-                <LinkMore href="/" title="Read More" green />
               </div>
             </div>
           </div>

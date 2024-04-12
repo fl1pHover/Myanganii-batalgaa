@@ -8,7 +8,7 @@ import LinkMore from "../ui/LinkMore";
 
 const ProjectHero = () => {
   return (
-    <div className="flex flex-col gap-20 mt-28">
+    <div className="flex flex-col gap-20 pb-8 mt-28">
       <Container className="grid grid-cols-2">
         <SectionTitle section="CHECK OUT" title="Recent Projects" />
         <div className="my-auto ml-auto cursor-pointer">

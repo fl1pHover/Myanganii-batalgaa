@@ -79,37 +79,37 @@ export const projects = [
   {
     id: 0,
     url: "",
-    title: "Projects",
+    title: "Beauty Residence Design",
     image: "./hero-bg.jpg",
   },
   {
     id: 1,
     url: "",
-    title: "Clients",
+    title: "Beauty Residence Design",
     image: "./hero-bg.jpg",
   },
   {
     id: 2,
     url: "",
-    title: "Awards",
+    title: "Beauty Residence Design",
     image: "./hero-bg.jpg",
   },
   {
     id: 3,
     url: "",
-    title: "Awards",
+    title: "Beauty Residence Design",
     image: "./hero-bg.jpg",
   },
   {
     id: 4,
     url: "",
-    title: "Awards",
+    title: "Beauty Residence Design",
     image: "./hero-bg.jpg",
   },
   {
     id: 5,
     url: "",
-    title: "Awards",
+    title: "Beauty Residence Design",
     image: "./hero-bg.jpg",
   },
 ];

@@ -73,7 +73,7 @@ const Navbar = () => {
               "flex items-center gap-1 hover:text-color-2 py-2"
             )}
           >
-            <span className="hidden uppercase lg:block">Booking</span>
+            <h1 className="hidden uppercase lg:block">Booking</h1>
             <Bookmark />
           </a>
 
@@ -85,7 +85,7 @@ const Navbar = () => {
             href="#login"
             onClick={toggleNavigation}
           >
-            <span className="hidden uppercase lg:flex">Menu</span>
+            <h1 className="hidden uppercase lg:flex">Menu</h1>
             <Hamburger />
           </button>
         </div>
