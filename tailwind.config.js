@@ -9,6 +9,37 @@ module.exports = {
   ],
   theme: {
     extend: {
+      letterSpacing: {
+        tightest: "-.075em",
+
+        tight: "-.025em",
+        normal: "0",
+        wide: ".025em",
+        wider: ".05em",
+
+        widest: ".25em",
+      },
+      fontSize: {
+        sm: "0.8rem",
+        base: "0.875rem",
+        xl: "1.25rem",
+        "2xl": "1.563rem",
+        "3xl": "1.953rem",
+        "4xl": "2.441rem",
+        "5xl": "3.052rem",
+      },
+      screens: {
+        xs: "480px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+      },
+
+      aspectRatio: {
+        "5/4": "5 / 4",
+        "6/5": "6 / 5",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -17,8 +48,15 @@ module.exports = {
       },
       colors: {
         color: {
-          1: "#AC6AFF",
+          0: "#040404",
+          1: "#777777",
           2: "#96dd1e",
+          3: "#c5c5c5",
+        },
+        gray: {
+          1: "#c5c5c5",
+          2: "#777777",
+          3: "#555555",
         },
         stroke: {
           1: "#26242C",
@@ -27,7 +65,13 @@ module.exports = {
         //   1: "#FFFFFF",
         // },
       },
+      transitionDuration: {
+        400: "400ms",
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    // truncate
+    require("@tailwindcss/line-clamp"),
+  ],
 };

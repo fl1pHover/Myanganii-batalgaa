@@ -26,4 +26,35 @@ export const navigation = [
   },
 ];
 
+export const project = [
+  {
+    id: 0,
+    title: "Best Home Design",
+    image: "hero-bg.jpg",
+    description:
+      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptas neque explicabo blanditiis minus eius excepturi non consequatur, nobis enim ipsa itaque placeat, hic doloribus quia tempora tempore aspernatur accusamus!",
+  },
+  {
+    id: 0,
+    title: "Best Home Design",
+    image: "hero-bg.jpg",
+    description:
+      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptas neque explicabo blanditiis minus eius excepturi non consequatur, nobis enim ipsa itaque placeat, hic doloribus quia tempora tempore aspernatur accusamus!",
+  },
+  {
+    id: 0,
+    title: "Best Home Design",
+    image: "hero-bg.jpg",
+    description:
+      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptas neque explicabo blanditiis minus eius excepturi non consequatur, nobis enim ipsa itaque placeat, hic doloribus quia tempora tempore aspernatur accusamus!",
+  },
+  {
+    id: 0,
+    title: "Best Home Design",
+    image: "hero-bg.jpg",
+    description:
+      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptas neque explicabo blanditiis minus eius excepturi non consequatur, nobis enim ipsa itaque placeat, hic doloribus quia tempora tempore aspernatur accusamus!",
+  },
+];
+
 export const phone = "(+437) 800-2078";
