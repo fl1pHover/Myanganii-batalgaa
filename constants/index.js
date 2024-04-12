@@ -1,3 +1,5 @@
+import { FacebookIcon, GoogleIcon, InstagramIcon, TwitterIcon } from "./icons";
+
 export const phone = "(+437) 800-2078";
 export const logo = "./img/logo.png";
 export const bg = "./img/hero-bg.jpg";
@@ -200,5 +202,24 @@ export const footerData = [
         info: "Blog",
       },
     ],
+  },
+];
+
+export const socials = [
+  {
+    icon: <FacebookIcon />,
+    url: "https://www.facebook.com/",
+  },
+  {
+    icon: <InstagramIcon />,
+    url: "https://www.instagram.com//",
+  },
+  {
+    icon: <TwitterIcon />,
+    url: "https://www.twitter.com/",
+  },
+  {
+    icon: <GoogleIcon />,
+    url: "https://www.google.com/",
   },
 ];

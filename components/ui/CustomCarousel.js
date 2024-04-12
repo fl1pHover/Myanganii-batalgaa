@@ -33,6 +33,7 @@ const CustomCarousel = ({ data }) => {
       plugins={[autoplay.current]}
       onMouseEnter={autoplay.current.stop}
       onMouseLeave={autoplay.current.reset}
+      controlSize={40}
     >
       {data.map((i) => (
         <Carousel.Slide key={i.id}>
