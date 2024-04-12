@@ -1,6 +1,15 @@
 import mergeNames from "@/util/mergeNames";
 import React from "react";
 
+const SectionTitle = ({ section, title }) => {
+  return (
+    <div className="inline-flex flex-col gap-8">
+      <LineTitle title={section} />
+      <h1 className={mergeNames("sectionTitle")}>{title}</h1>
+    </div>
+  );
+};
+
 const LineTitle = ({ title }) => {
   return (
     <h1
@@ -14,4 +23,4 @@ const LineTitle = ({ title }) => {
   );
 };
 
-export { LineTitle };
+export { LineTitle, SectionTitle };

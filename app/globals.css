@@ -31,7 +31,14 @@ body {
   .text-balance {
     text-wrap: balance;
   } */
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-color-0;
+}
 .sectionTitle {
   @apply text-[24px] lg:text-[36px] font-extrabold text-color-0;
 }
@@ -45,4 +52,22 @@ body {
 
 .hoverEffect {
   @apply ease-in-out duration-400;
+}
+
+.sectionGrid {
+  @apply grid grid-cols-1 gap-10 lg:grid-cols-2;
+}
+
+.mantine-Carousel-indicators {
+  transform: translateY(80px);
+}
+.mantine-Carousel-indicator {
+  background-color: #c5c5c5 !important;
+}
+.mantine-Carousel-indicator:hover {
+  background-color: #96dd1e !important;
+}
+
+.mantine-Carousel-indicator[data-active="true"] {
+  background-color: #96dd1e !important;
 }

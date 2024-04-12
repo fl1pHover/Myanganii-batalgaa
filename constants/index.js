@@ -57,4 +57,61 @@ export const project = [
   },
 ];
 
+export const achievements = [
+  {
+    id: 0,
+    count: 258,
+    title: "Projects",
+  },
+  {
+    id: 1,
+    count: 143,
+    title: "Clients",
+  },
+  {
+    id: 2,
+    count: 19,
+    title: "Awards",
+  },
+];
+
+export const projects = [
+  {
+    id: 0,
+    url: "",
+    title: "Projects",
+    image: "./hero-bg.jpg",
+  },
+  {
+    id: 1,
+    url: "",
+    title: "Clients",
+    image: "./hero-bg.jpg",
+  },
+  {
+    id: 2,
+    url: "",
+    title: "Awards",
+    image: "./hero-bg.jpg",
+  },
+  {
+    id: 3,
+    url: "",
+    title: "Awards",
+    image: "./hero-bg.jpg",
+  },
+  {
+    id: 4,
+    url: "",
+    title: "Awards",
+    image: "./hero-bg.jpg",
+  },
+  {
+    id: 5,
+    url: "",
+    title: "Awards",
+    image: "./hero-bg.jpg",
+  },
+];
+
 export const phone = "(+437) 800-2078";

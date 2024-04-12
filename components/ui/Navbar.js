@@ -6,7 +6,7 @@ import mergeNames from "@/util/mergeNames";
 import { Bookmark, Close, Hamburger } from "@/constants/icons";
 import styles from "@/constants/styles";
 
-const Header = () => {
+const Navbar = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
   const toggleNavigation = () => {
     if (openNavigation) {
@@ -134,4 +134,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;

@@ -1,21 +1,17 @@
 import React from "react";
 import LinkMore from "../ui/LinkMore";
 import mergeNames from "@/util/mergeNames";
-import { LineTitle } from "../ui/Title";
+import { LineTitle, SectionTitle } from "../ui/Title";
 import Container from "../ui/Container";
 
 const AboutHero = () => {
   return (
-    <Container
-      className={mergeNames("grid grid-cols-1 lg:grid-cols-2 py-14 lg:py-0")}
-    >
+    <Container className={mergeNames("sectionGrid")}>
       <div className="inline-flex flex-col gap-10">
-        <div className="inline-flex flex-col gap-8">
-          <LineTitle title="about us" />
-          <h1 className={mergeNames("sectionTitle")}>
-            We Over 15 Years To Design Thousand Of Successful Dreamst
-          </h1>
-        </div>
+        <SectionTitle
+          section="about us"
+          title="We Over 15 Years To Design Thousand Of Successful Dreamst"
+        />
 
         <div className="inline-flex flex-col gap-8 mb-10 lg:mb-0">
           <p className="w-[80%]">

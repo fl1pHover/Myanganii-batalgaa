@@ -8,7 +8,7 @@ const LinkMore = ({ ...props }) => {
       <a
         href={props.href}
         className={mergeNames(
-          "uppercase text-[16px] inline-flex items-center gap-2 group ",
+          "uppercase text-[16px] inline-flex items-center gap-2 group hover:text-color-2  hoverEffect",
           props.green ? "text-color-2" : ""
         )}
       >

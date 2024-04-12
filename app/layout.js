@@ -1,9 +1,11 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/ui/Header";
+import Navbar from "@/components/ui/Navbar";
 import ScrollTop from "@/components/ui/ScrollTop";
 
+import "@mantine/core/styles.css";
 const inter = Inter({ subsets: ["latin"] });
+import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 
 export const metadata = {
   title: "Create Next App",
@@ -13,10 +15,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <ColorSchemeScript />
+      </head>
       <body className={inter.className}>
-        <Header />
-        {children}
-        <ScrollTop />
+        <MantineProvider>
+          <Navbar />
+          {children}
+          <ScrollTop />
+        </MantineProvider>
       </body>
     </html>
   );
