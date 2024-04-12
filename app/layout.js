@@ -18,7 +18,7 @@ export default async function RootLayout({ children }) {
   const header = headers();
   const nextUrl = header.get("referer");
 
-  const admin = nextUrl.includes("/admin");
+  const admin = nextUrl?.includes("/admin") ?? false;
 
   return (
     <html lang="en">
