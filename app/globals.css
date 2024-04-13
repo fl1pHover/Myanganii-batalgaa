@@ -39,6 +39,23 @@ h5,
 h6 {
   @apply text-color-0;
 }
+
+.navbar {
+  @apply fixed top-0 left-0 z-10 flex items-center justify-between w-full px-5 py-8 duration-500 lg:px-8 xl:px-20 max-lg:py-4;
+}
+
+.navbar_mobile {
+  @apply fixed top-0 left-0 w-full z-50 h-[100vh] bg-white  duration-400;
+}
+
+.navbar_items {
+  @apply flex flex-col items-center justify-center h-full gap-4 m-auto duration-400;
+}
+
+.navbar_item {
+  @apply text-[25px] uppercase font-bold text-color-1 hover:text-color-2 cursor-pointer hoverEffect;
+}
+
 .sectionTitle {
   @apply text-[18px] lg:text-[36px] font-extrabold;
 }

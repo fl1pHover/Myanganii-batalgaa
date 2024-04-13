@@ -7,6 +7,7 @@ const IconBundle = () => {
     <div className="flex flex-row gap-4">
       {socials.map((i) => (
         <a
+          key={i}
           href={i.url}
           className="text-xl hoverEffect hover:text-color-2"
           target="_blank"

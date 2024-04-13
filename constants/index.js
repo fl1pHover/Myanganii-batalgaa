@@ -194,12 +194,11 @@ export const footerData = [
     contacts: [
       {
         info: "About us",
+        url: "/about",
       },
       {
         info: "Portfolios",
-      },
-      {
-        info: "Blog",
+        url: "/portfolio",
       },
     ],
   },

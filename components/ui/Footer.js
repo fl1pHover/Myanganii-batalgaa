@@ -5,13 +5,14 @@ import mergeNames from "@/util/mergeNames";
 import React from "react";
 import Container from "./Container";
 import IconBundle from "./IconBundle";
+import LinkMore from "./LinkMore";
 
 const Footer = () => {
   return (
-    <div className="py-20 md:py-[100px] relative flex flex-col gap-20">
+    <div className="py-20 md:py-[100px] relative bottom-0 left-0 flex flex-col gap-20">
       <img
         src={bg_footer}
-        className="absolute top-0 left-0 w-full h-full"
+        className="absolute top-0 left-0 w-full h-full "
         alt=""
       />
       <div className="absolute top-0 left-0 z-0 w-full h-full bg-gradient-to-b from-white to-transparent "></div>
@@ -22,14 +23,23 @@ const Footer = () => {
           "gap-10"
         )}
       >
-        <img src={logo} alt="" />
+        <img src={logo} alt="" className="px-0 md:px-9" />
         {footerData.map((item) => (
           <div className="flex flex-col px-0 text-left md:px-9">
             <h1 className="mb-4 font-semibold text-[24px]">{item.title}</h1>
             <ul>
               {item.contacts.map((contact) => (
-                <li className="my-3">
-                  <p className="text-[14px]">{contact.info}</p>
+                <li key={contact} className="my-3">
+                  {contact.url ? (
+                    <a
+                      href={contact.url}
+                      className="text-[14px] hover:text-color-2 hoverEffect"
+                    >
+                      {contact.info}
+                    </a>
+                  ) : (
+                    <p className={mergeNames("text-[14px]")}>{contact.info}</p>
+                  )}
                 </li>
               ))}
             </ul>

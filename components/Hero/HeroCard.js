@@ -1,6 +1,6 @@
 import React from "react";
 import LinkMore from "../ui/LinkMore";
-import styles from "@/constants/styles";
+
 import mergeNames from "@/util/mergeNames";
 
 const HeroCard = ({ image, title, description }) => {

@@ -1,28 +1,26 @@
 "use client";
 import { logo, navigation, phone } from "@/constants";
 import React, { useEffect, useState } from "react";
-import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import mergeNames from "@/util/mergeNames";
 import { Bookmark, Close, Hamburger } from "@/constants/icons";
-import styles from "@/constants/styles";
 import IconBundle from "./IconBundle";
 
 const Navbar = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
   const toggleNavigation = () => {
-    if (openNavigation) {
-      setOpenNavigation(false);
-      // enablePageScroll();
-    } else {
-      setOpenNavigation(true);
-      // disablePageScroll();
-    }
+    setOpenNavigation(!openNavigation);
+    // if (openNavigation) {
+    //   setOpenNavigation(false);
+    //   // enablePageScroll();
+    // } else {
+    //   setOpenNavigation(true);
+    //   // disablePageScroll();
+    // }
   };
 
   const handleClick = () => {
     if (!openNavigation) return;
-
-    enablePageScroll();
+    // enablePageScroll();
     setOpenNavigation(false);
   };
 
@@ -37,7 +35,6 @@ const Navbar = () => {
   };
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -47,83 +44,60 @@ const Navbar = () => {
     <div>
       <div
         className={mergeNames(
-          showBackground ? "bg-white shadow" : "bg-transparent",
-          "fixed top-0 left-0 flex items-center z-10 justify-between w-full duration-500 px-5 py-8 lg:px-8 xl:px-20 max-lg:py-4"
+          "navbar",
+          showBackground ? "bg-white shadow" : "bg-transparent"
         )}
       >
-        <a className="w-[3rem] aspect-square bg-red-500" href="/">
-          <img src={logo} width={190} height={40} alt="Brainwave" />
+        <a href="/">
+          <img src={logo} width={190} height={40} alt="logo" />
         </a>
 
-        <nav className={`flex  absolute left-[50%] -translate-x-[50%]`}>
-          <div className="items-center hidden gap-5 lg:gap-20 md:flex">
-            <h1 className="uppercase">
-              Утас:
-              <span className="font-bold"> {phone}</span>
-            </h1>
-            <h1 className="w-[2px] h-full bg-black"></h1>
-            <IconBundle />
-          </div>
+        <nav className={`items-center hidden gap-5 lg:gap-20 md:flex`}>
+          <h1 className="uppercase">
+            Утас:
+            <span className="font-bold"> {phone}</span>
+          </h1>
+          <h1 className="w-[2px] h-6 bg-black"></h1>
+          <IconBundle />
         </nav>
 
-        <div className="flex items-center gap-4 font-bold">
+        <div className="flex items-center gap-4">
           <a
-            href="#signup"
-            className={mergeNames(
-              "hoverEffect",
-              "flex items-center gap-1 hover:text-color-2 py-2"
-            )}
+            href="/booking"
+            className="flex items-center gap-1 py-2 hoverEffect hover:text-color-2"
           >
-            <span className="hidden uppercase lg:block">Booking</span>
-            <Bookmark className="text-xl" />
+            <NavButton
+              title="Booking"
+              icon={<Bookmark className="text-xl" />}
+            />
           </a>
 
           <button
-            className={mergeNames(
-              "hoverEffect",
-              "flex items-center gap-1 hover:text-color-2 py-2"
-            )}
-            href="#login"
+            className="flex items-center gap-1 py-2 hoverEffect hover:text-color-2"
             onClick={toggleNavigation}
           >
-            <span className="hidden uppercase lg:flex">Menu</span>
-            <Hamburger className="text-xl" />
+            <NavButton title="Menu" icon={<Hamburger className="text-xl" />} />
           </button>
         </div>
       </div>
 
-      <div
-        className={mergeNames(
-          openNavigation
-            ? "fixed top-0 left-0 right-0 z-50 h-[100vh] bg-white transition ease-in duration-400"
-            : "flex ml-auto"
-        )}
-      >
+      <div className={mergeNames(openNavigation && "navbar_mobile")}>
         <button
           className={mergeNames(
             "hoverEffect",
-            openNavigation ? " flex " : "ml-auto hidden",
+            openNavigation ? " flex" : "ml-auto hidden duration-400",
             "absolute z-10 ml-auto top-10 right-10 py-5 hover:text-color-2"
           )}
-          href="#login"
           onClick={toggleNavigation}
         >
           <Close className="text-[50px]" />
         </button>
-        <div
-          className={mergeNames(
-            openNavigation ? "relative" : "hidden ",
-            "flex flex-col items-center h-full justify-center m-auto z-2 gap-4"
-          )}
-        >
+        <div className={mergeNames(openNavigation ? "navbar_items" : "hidden")}>
           {navigation.map((item) => (
             <a
               key={item.id}
               href={item.url}
-              className={mergeNames(
-                "hoverEffect",
-                "text-[25px] uppercase font-bold text-color-1 hover:text-color-2 cursor-pointer"
-              )}
+              className={mergeNames("navbar_item")}
               onClick={handleClick}
             >
               {item.title}
@@ -132,6 +106,15 @@ const Navbar = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+const NavButton = (props) => {
+  return (
+    <>
+      <span className="hidden font-bold uppercase lg:flex">{props.title}</span>
+      {props.icon}
+    </>
   );
 };
 
