@@ -71,6 +71,15 @@ h6 {
   @apply text-[14px] text-gray-1;
 }
 
+.background_header {
+  background-image: url("https://media.geeksforgeeks.org/wp-content/uploads/20231218222854/1.png");
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  @apply text-[100px] md:text-[150px] lg:text-[250px] font-bold text-center;
+}
+
 .sectionPadding_top {
   @apply pt-[180px];
 }
@@ -157,4 +166,46 @@ h6 {
 .controls svg {
   background-color: red !important;
   display: hidden !important;
+}
+
+.loader {
+  width: 45px;
+  aspect-ratio: 0.75;
+  --c: no-repeat linear-gradient(#000 0 0);
+  background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
+  animation: l7 1s infinite linear alternate;
+}
+@keyframes l7 {
+  0% {
+    background-size: 20% 50%, 20% 50%, 20% 50%;
+  }
+  20% {
+    background-size: 20% 20%, 20% 50%, 20% 50%;
+  }
+  40% {
+    background-size: 20% 100%, 20% 20%, 20% 50%;
+  }
+  60% {
+    background-size: 20% 50%, 20% 100%, 20% 20%;
+  }
+  80% {
+    background-size: 20% 50%, 20% 50%, 20% 100%;
+  }
+  100% {
+    background-size: 20% 50%, 20% 50%, 20% 50%;
+  }
+}
+
+.fade {
+  animation: fade 2s ease-in forwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
 }
