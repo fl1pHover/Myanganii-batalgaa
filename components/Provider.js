@@ -1,7 +1,10 @@
-import { createTheme, MantineProvider } from "@mantine/core";
+import { ColorSchemeScript, createTheme, MantineProvider } from "@mantine/core";
 
 const Provider = ({ children }) => (
-  <MantineProvider>{children}</MantineProvider>
+  <>
+    <ColorSchemeScript defaultColorScheme="light" />
+    <MantineProvider defaultColorScheme="light">{children}</MantineProvider>
+  </>
 );
 
 export default Provider;

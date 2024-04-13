@@ -2,7 +2,6 @@ import Container from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/Title";
 import { contactData } from "@/constants";
 import React from "react";
-import ContactForm from "./ContactForm";
 
 const Contact = () => {
   return (

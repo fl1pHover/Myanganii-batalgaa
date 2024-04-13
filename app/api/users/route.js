@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
     if (user) {
       return NextResponse.json(false, { status: 201 });
     } else {
-       await User.create(dto);
+      await User.create(dto);
       return NextResponse.json(true, { status: 201 });
     }
   } catch (error) {
