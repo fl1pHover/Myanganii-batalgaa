@@ -42,7 +42,7 @@ export async function POST(request) {
       const fileBuffer = f.stream();
 
       const res = await uploadToGooglDrive(fileBuffer);
-      console.log("res : ", res);
+
       r.push(res);
     });
     return NextResponse.json({
