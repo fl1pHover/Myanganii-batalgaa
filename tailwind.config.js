@@ -34,10 +34,7 @@ module.exports = {
         xl: "1280px",
       },
 
-      aspectRatio: {
-        "5/4": "5 / 4",
-        "6/5": "6 / 5",
-      },
+      aspectRatio: { "3/2": "3 / 2", "5/4": "5 / 4", "6/5": "6 / 5" },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -53,6 +50,7 @@ module.exports = {
           white: "#ffffff",
         },
         gray: {
+          0: "#f5f5f5",
           1: "#c5c5c5",
           2: "#777777",
           3: "#555555",

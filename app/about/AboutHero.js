@@ -1,8 +1,8 @@
 import React from "react";
-import LinkMore from "../ui/LinkMore";
+import LinkMore from "../../components/ui/LinkMore";
 import mergeNames from "@/util/mergeNames";
-import { LineTitle, SectionTitle } from "../ui/Title";
-import Container from "../ui/Container";
+import { LineTitle, SectionTitle } from "../../components/ui/Title";
+import Container from "../../components/ui/Container";
 import { bg } from "@/constants";
 
 const AboutHero = () => {

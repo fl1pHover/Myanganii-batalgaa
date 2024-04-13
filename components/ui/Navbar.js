@@ -41,7 +41,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div>
+    <nav className="relative">
       <div
         className={mergeNames(
           "navbar",
@@ -105,7 +105,7 @@ const Navbar = () => {
           ))}
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

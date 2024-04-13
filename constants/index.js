@@ -9,27 +9,27 @@ export const navigation = [
   {
     id: "0",
     title: "Home",
-    id: "/",
+    url: "/",
   },
   {
-    id: "0",
+    id: "1",
     title: "About Us",
-    id: "/about",
+    url: "/about",
   },
   {
-    id: "0",
+    id: "2",
     title: "Portfolios",
-    id: "/portfolio",
+    url: "/portfolio",
   },
   {
-    id: "0",
+    id: "3",
     title: "Contact",
-    id: "/contact",
+    url: "/contact",
   },
   {
-    id: "0",
+    id: "4",
     title: "404",
-    id: "/404",
+    url: "/404",
   },
 ];
 
@@ -157,7 +157,7 @@ export const sponsors = [
 export const footerData = [
   {
     title: "Quick Contact",
-    contacts: [
+    links: [
       {
         info: "3561 Aaron Smith Drive, Columbia",
       },
@@ -171,7 +171,7 @@ export const footerData = [
   },
   {
     title: "Useful Link",
-    contacts: [
+    links: [
       {
         info: "TERMS & CONDITION",
       },
@@ -191,14 +191,14 @@ export const footerData = [
   },
   {
     title: "Company",
-    contacts: [
+    links: [
       {
         info: "About us",
-        url: "/about",
+        link: "/about",
       },
       {
         info: "Portfolios",
-        url: "/portfolio",
+        link: "/portfolio",
       },
     ],
   },

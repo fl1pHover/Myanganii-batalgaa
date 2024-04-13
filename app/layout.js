@@ -6,10 +6,10 @@ import ScrollTop from "@/components/ui/ScrollTop";
 
 import "@mantine/core/styles.css";
 const inter = Inter({ subsets: ["latin"] });
-import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import Footer from "@/components/ui/Footer";
 import { Suspense } from "react";
 import Loading from "./loading";
+import Provider from "@/components/Provider";
 
 export const metadata = {
   title: "Create Next App",
@@ -19,23 +19,19 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   const header = headers();
   const nextUrl = header.get("referer");
-
   const admin = nextUrl?.includes("/admin") ?? false;
 
   return (
     <html lang="en">
-      <head>
-        <ColorSchemeScript />
-      </head>
       <body className={inter.className}>
-        <MantineProvider>
-          <Suspense fallback={<Loading />}>
+        <Provider>
+          <main className="app">
             {!admin && <Navbar />}
-            <div className="relative">{children}</div>
+            {children}
             {!admin && <ScrollTop />}
             {!admin && <Footer />}
-          </Suspense>
-        </MantineProvider>
+          </main>
+        </Provider>
       </body>
     </html>
   );

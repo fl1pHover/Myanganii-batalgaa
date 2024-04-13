@@ -1,4 +1,4 @@
-import AboutHero from "@/components/About/AboutHero";
+import AboutHero from "@/app/about/AboutHero";
 import AchievementHero from "@/components/Achievement/AchievementHero";
 import Hero from "@/components/Hero/Hero";
 import ProjectHero from "@/components/Project/ProjectHero";
@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex flex-col">
+    <section className="flex flex-col">
       <Hero />
       <div className="flex flex-col gap-24">
         <AboutHero />
@@ -19,6 +19,6 @@ export default function Home() {
       </div>
       <ProjectHero />
       <Sponsers />
-    </main>
+    </section>
   );
 }

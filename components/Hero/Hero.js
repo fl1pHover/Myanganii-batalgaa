@@ -9,7 +9,7 @@ import ScrollTop from "../ui/ScrollTop";
 
 const Hero = () => {
   return (
-    <div>
+    <section id="hero">
       <div className="w-full h-[80vh] relative">
         <div className="w-full h-full">
           <img
@@ -50,7 +50,7 @@ const Hero = () => {
           />
         ))}
       </Container>
-    </div>
+    </section>
   );
 };
 

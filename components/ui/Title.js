@@ -1,3 +1,4 @@
+import { navigation } from "@/constants";
 import mergeNames from "@/util/mergeNames";
 import React from "react";
 
@@ -23,4 +24,24 @@ const LineTitle = ({ title }) => {
   );
 };
 
-export { LineTitle, SectionTitle };
+const PageHeader = ({ header, currentPage }) => {
+  console.log(navigation[0].title);
+  return (
+    <div className="grid w-full grid-cols-1 md:grid-cols-2">
+      <h1
+        className={mergeNames("sectionTitle_semibold text-center md:text-left")}
+      >
+        {header}
+      </h1>
+      <div className="flex items-center gap-2 pt-10 ml-auto mr-auto md:mr-0 uppercase text-[16px]">
+        <a href="/" className="hover_green">
+          {navigation[0].title}
+        </a>
+        <span>/</span>
+        <p className="text-gray-2"> {currentPage}</p>
+      </div>
+    </div>
+  );
+};
+
+export { LineTitle, SectionTitle, PageHeader };

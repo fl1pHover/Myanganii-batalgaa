@@ -31,6 +31,19 @@ body {
   .text-balance {
     text-wrap: balance;
   } */
+.app {
+  @apply min-h-[150vh] flex flex-col justify-between;
+}
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 120px 24px 160px 24px;
+  pointer-events: none;
+}
+
 h1,
 h2,
 h3,
@@ -38,6 +51,20 @@ h4,
 h5,
 h6 {
   @apply text-color-0;
+}
+
+::-moz-selection {
+  color: #96dd1e;
+  background: #040404;
+}
+
+::selection {
+  color: #96dd1e;
+  background: #040404;
+}
+
+.sectionPadding_top {
+  @apply pt-[180px];
 }
 
 .navbar {
@@ -57,14 +84,21 @@ h6 {
 }
 
 .sectionTitle {
-  @apply text-[18px] lg:text-[36px] font-extrabold;
+  @apply text-[18px] xs:text-[24px] md:text-[36px] font-extrabold;
+}
+.sectionTitle_semibold {
+  @apply text-[18px] xs:text-[24px] md:text-[36px] font-semibold;
 }
 
 .smallTitle {
   @apply font-semibold text-[16px] xl:text-[24px];
 }
-.container {
+/* .container {
   @apply px-4 w-full lg:w-[750px] xl:w-[1170px] mx-auto;
+} */
+
+.hover_green {
+  @apply hover:text-color-2 duration-400;
 }
 
 .hoverEffect {
