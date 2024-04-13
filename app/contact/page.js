@@ -17,8 +17,11 @@ const Contact = () => {
           <h1 className="largeTitle">Contact Us</h1>
           {contactData.map((c) => (
             <div key={c.id} className="flex flex-col ">
-              <p className="text-[35px] text-gray-3 ">{c.icon}</p>
-              <h1 className="mt-8 mb-6 smallTitle">{c.title}</h1>
+              {/* <p className="text-[35px] text-gray-3 ">{c.icon}</p> */}
+              <h1 className="flex items-center gap-6 mt-0 mb-6 smallTitle">
+                <span className="text-[35px] text-gray-3">{c.icon}</span>{" "}
+                {c.title}
+              </h1>
               <p className="mb-5 p">{c.info}</p>
               {c.additional}
             </div>

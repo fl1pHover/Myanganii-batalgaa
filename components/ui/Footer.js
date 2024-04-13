@@ -22,13 +22,15 @@ const Footer = () => {
           "gap-10"
         )}
       >
-        <img src={logo} alt="" className="px-0 md:px-9" />
+        <img src={logo} alt="" className="px-0 md:px-9 w-[150px] md:w-full" />
         {footerData.map((item) => (
           <div
             key={item.title}
             className="flex flex-col px-0 text-left md:px-9"
           >
-            <h1 className="mb-4 font-semibold text-[24px]">{item.title}</h1>
+            <h1 className="mb-2 md:mb-4 font-semibold text-[24px]">
+              {item.title}
+            </h1>
 
             {item.links.map((contact) => (
               <>
@@ -36,12 +38,12 @@ const Footer = () => {
                   <a
                     key={contact.info}
                     href={contact.link}
-                    className="text-[14px] hover:text-color-2 hoverEffect my-3"
+                    className="text-[14px] hover:text-color-2 hoverEffect my-1 md:my-3"
                   >
                     {contact.info}
                   </a>
                 ) : (
-                  <p className={mergeNames("text-[14px] my-3")}>
+                  <p className={mergeNames("text-[14px] my-1 md:my-3")}>
                     {contact.info}
                   </p>
                 )}

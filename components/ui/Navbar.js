@@ -48,16 +48,21 @@ const Navbar = () => {
       <div
         className={mergeNames(
           "navbar",
-
           showBackground
-            ? "bg-white shadow"
+            ? "bg-white shadow-lg"
             : pathname == "/"
             ? "bg-transparent"
             : "bg-gray-0"
         )}
       >
         <a href="/">
-          <img src={logo} width={190} height={40} alt="logo" />
+          <img
+            src={logo}
+            className="w-[150px] lg:w-[190px]"
+            width={190}
+            height={40}
+            alt="logo"
+          />
         </a>
 
         <nav className={`items-center hidden gap-5 lg:gap-20 md:flex`}>
