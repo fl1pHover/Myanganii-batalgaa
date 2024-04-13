@@ -37,18 +37,19 @@ export async function POST(request) {
     return res.data.id;
   };
   try {
-    const r = [];
-    file.map(async (f) => {
-      const fileBuffer = f.stream();
+    let files = [];
+    file.map((f) => {
+      files.push(new Promise(async (resolve, reject) => {
+        const fileBuffer = f.stream();
 
-      const res = await uploadToGooglDrive(fileBuffer);
+        const res = await uploadToGooglDrive(fileBuffer);
+        resolve(res)
+      }))
+    });
 
-      r.push(res);
-    });
-    return NextResponse.json({
-      id: r,
-      success: true,
-    });
+    let uploadedFiles = await Promise.all(files)
+   
+    return NextResponse.json(uploadedFiles);
   } catch (error) {
     return NextResponse.json({ success: false });
   }

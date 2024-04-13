@@ -4,40 +4,36 @@ export default function AdminPage() {
   const submit = async (e) => {
     e.preventDefault();
     const data = new FormData();
-
     const formData = new FormData(e.currentTarget);
     const title = formData.get("title");
     const description = formData.get("description");
     const type = formData.get("type");
     const date = formData.get("date");
     const images = formData.getAll("images");
-    images.forEach((image) => {
+    images.forEach(async (image) => {
       data.append("file", image);
       data.append("fileName", image.name);
     });
-    
+
     try {
-      const uploadFile = await fetch("/api/upload", {
+      let uploadedImages = await fetch("/api/upload", {
         method: "POST",
         body: data,
       }).then((d) => d.json());
-      console.log(uploadFile)
-      const res = await fetch(
-        `/api/project`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            date: date,
-            title: title,
-            description: description,
-            type: type,
-            image: uploadFile.id
-          }),
-        }
-      ).then((d) => {
+
+      const res = await fetch(`/api/project`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          date: date,
+          title: title,
+          description: description,
+          type: type,
+          image: uploadedImages,
+        }),
+      }).then((d) => {
         return d.json();
       });
       console.log(res);

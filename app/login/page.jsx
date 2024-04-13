@@ -12,7 +12,7 @@ export default function AuthPage() {
     const password = formData.get("password");
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/auth`, {
+      const res = await fetch(`/api/auth`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -22,6 +22,7 @@ export default function AuthPage() {
           password: password,
         }),
       }).then((d) => {
+        
         if(d.status == 201){
           router.push('/admin')
         }

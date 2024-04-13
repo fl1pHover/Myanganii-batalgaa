@@ -28,18 +28,18 @@ export async function POST(req) {
     const data = await req.json();
     const cookie = cookies();
     const token = cookie.get("token");
-
+    console.log(data);
     if (token.value != "" && token.value != null) {
       const user = await verifyUser(token.value);
 
       if (user) {
         await Project.create(data);
-        return NextResponse.json("Амжилттай.", { status: 201 });
+        return NextResponse.json({ message: "Амжилттай." }, { status: 201 });
       } else {
-        return NextResponse.json("Нэвтрэнэ үү.", { status: 201 });
+        return NextResponse.json({ message: "Нэвтрэнэ үү." }, { status: 201 });
       }
     } else {
-      return NextResponse.json("Нэвтрэнэ үү.", { status: 401 });
+      return NextResponse.json({ message: "Нэвтрэнэ үү." }, { status: 401 });
     }
   } catch (error) {
     return NextResponse.json({ error: `${error}` });

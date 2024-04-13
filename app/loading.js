@@ -5,7 +5,7 @@ const Loading = () => {
   return (
     <main className="absolute top-0 left-0 flex items-center justify-center w-screen h-screen text-2xl z-100">
       <div className="fade">
-        <div class="loader"></div>
+        <div className="loader"></div>
       </div>
     </main>
   );
