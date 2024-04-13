@@ -1,6 +1,6 @@
 import mergeNames from "@/util/mergeNames";
 
-import React from "react";
+import React, { Suspense } from "react";
 import HeroCard from "./HeroCard";
 import LinkMore from "../ui/LinkMore";
 import Container from "../ui/Container";
@@ -10,7 +10,7 @@ import ScrollTop from "../ui/ScrollTop";
 const Hero = () => {
   return (
     <section id="hero">
-      <div className="w-full h-[80vh] relative">
+      <div className="w-full h-[60vh] xs:h-[80vh] relative">
         <div className="w-full h-full">
           <img
             src={bg}
@@ -23,12 +23,14 @@ const Hero = () => {
               "relative h-full flex flex-col justify-center"
             )}
           >
-            <div className="max-w-[500px] flex flex-col gap-8 text-center xs:text-left">
-              <h1 className="text-[18px] xs:text-[36px] font-medium">
+            <div className="max-w-[500px] flex flex-col gap-8 items-center xs:items-start ">
+              <h1 className="text-[18px] xs:text-[36px] font-semibold text-center xs:text-left">
                 Dream Comes True With Our Talented Architect
               </h1>
 
-              <LinkMore href="/" title="Browse More" />
+              <div className="inline-flex">
+                <LinkMore href="/" title="Browse More" />
+              </div>
             </div>
           </Container>
         </div>
@@ -39,16 +41,18 @@ const Hero = () => {
           "lg:-translate-y-[100px]"
         )}
       >
-        {project.slice(0, 3).map((item) => (
-          <HeroCard
-            key={item.id}
-            href={item.url}
-            title={item.title}
-            description={item.description}
-            image={item.image}
-            green
-          />
-        ))}
+        <Suspense fallback={<p>loading</p>}>
+          {project.slice(0, 3).map((item) => (
+            <HeroCard
+              key={item.id}
+              href={item.url}
+              title={item.title}
+              description={item.description}
+              image={item.image}
+              green
+            />
+          ))}
+        </Suspense>
       </Container>
     </section>
   );

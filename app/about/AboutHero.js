@@ -15,7 +15,7 @@ const AboutHero = () => {
         />
 
         <div className="inline-flex flex-col gap-8 mb-10 lg:mb-0">
-          <p className="w-full lg:w-[80%]">
+          <p className="w-full lg:w-[80%] p">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim.

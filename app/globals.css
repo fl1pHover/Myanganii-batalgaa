@@ -25,6 +25,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  background-color: white;
 }
 
 /* @layer utilities {
@@ -63,12 +64,19 @@ h6 {
   background: #040404;
 }
 
+.p {
+  @apply text-[14px] text-gray-3;
+}
+.p_light {
+  @apply text-[14px] text-gray-1;
+}
+
 .sectionPadding_top {
   @apply pt-[180px];
 }
 
 .navbar {
-  @apply fixed top-0 left-0 z-10 flex items-center justify-between w-full px-5 py-8 duration-500 lg:px-8 xl:px-20 max-lg:py-4;
+  @apply fixed top-0 left-0 z-10 flex items-center justify-between w-full px-5 py-6 duration-500 lg:px-8 xl:px-20 lg:py-8;
 }
 
 .navbar_mobile {
@@ -84,18 +92,19 @@ h6 {
 }
 
 .sectionTitle {
-  @apply text-[18px] xs:text-[24px] md:text-[36px] font-extrabold;
+  @apply text-[18px] xs:text-[24px] sm:text-[36px] font-extrabold;
 }
 .sectionTitle_semibold {
-  @apply text-[18px] xs:text-[24px] md:text-[36px] font-semibold;
+  @apply text-[18px] xs:text-[24px] sm:text-[36px] font-semibold;
 }
 
 .smallTitle {
   @apply font-semibold text-[16px] xl:text-[24px];
 }
-/* .container {
-  @apply px-4 w-full lg:w-[750px] xl:w-[1170px] mx-auto;
-} */
+
+.largeTitle {
+  @apply text-[18px] xss:text-[24px] lg:text-[36px] font-semibold;
+}
 
 .hover_green {
   @apply hover:text-color-2 duration-400;
@@ -112,16 +121,31 @@ h6 {
 .banner_container {
   @apply mx-0 my-20 xl:mx-10;
 }
+
 .input {
   @apply p-3 text-[14px] focus:outline-none;
+}
+
+.footer_grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3;
+}
+
+.footer_input {
+  @apply bg-gray-0 focus:outline-none h-[50px] p-4;
+}
+
+.btn_green {
+  @apply px-8 py-4 bg-color-2 hover:bg-black hover:text-color-2 duration-400;
 }
 
 .mantine-Carousel-indicators {
   transform: translateY(80px);
 }
+
 .mantine-Carousel-indicator {
   background-color: #c5c5c5 !important;
 }
+
 .mantine-Carousel-indicator:hover {
   background-color: #96dd1e !important;
 }

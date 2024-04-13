@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import mergeNames from "@/util/mergeNames";
 import { Bookmark, Close, Hamburger } from "@/constants/icons";
 import IconBundle from "./IconBundle";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
@@ -40,12 +41,19 @@ const Navbar = () => {
     };
   }, []);
 
+  const pathname = usePathname();
+
   return (
     <nav className="relative">
       <div
         className={mergeNames(
           "navbar",
-          showBackground ? "bg-white shadow" : "bg-transparent"
+
+          showBackground
+            ? "bg-white shadow"
+            : pathname == "/"
+            ? "bg-transparent"
+            : "bg-gray-0"
         )}
       >
         <a href="/">

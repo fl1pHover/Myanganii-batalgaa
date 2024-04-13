@@ -2,7 +2,7 @@
 import Container from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/Title";
 import mergeNames from "@/util/mergeNames";
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import PortfolioCard from "./PortfolioCard";
 
 const categories = [
@@ -56,12 +56,14 @@ const Portfolio = () => {
             ))}
           </div>
           {/* Cards */}
-          <div className="grid w-full grid-cols-1 mx-auto md:grid-cols-2 lg:grid-cols-3 duration-400">
-            <PortfolioCard
-              image="https://demo.xstheme.com/lacasa/wp-content/uploads/sites/13/2018/01/10-390x254.jpeg"
-              title="Modern architech design"
-            />
-          </div>
+          <Suspense fallback={<p>loading</p>}>
+            <div className="grid w-full grid-cols-1 mx-auto md:grid-cols-2 lg:grid-cols-3 duration-400">
+              <PortfolioCard
+                image="https://demo.xstheme.com/lacasa/wp-content/uploads/sites/13/2018/01/10-390x254.jpeg"
+                title="Modern architech design"
+              />
+            </div>
+          </Suspense>
         </section>
       </Container>
     </section>

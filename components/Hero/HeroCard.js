@@ -24,7 +24,7 @@ const HeroCard = ({ image, title, description }) => {
         >
           <div className={mergeNames("flex flex-col gap-5 xl:gap-10")}>
             <h1 className={mergeNames("smallTitle", "text-white")}>{title}</h1>
-            <p className="text-base text-color-3 line-clamp-4">{description}</p>
+            <p className="p_light line-clamp-4">{description}</p>
           </div>
           <LinkMore href="/" title="Read More" green />
         </div>

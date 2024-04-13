@@ -2,9 +2,9 @@ import React from "react";
 
 const Loading = () => {
   return (
-    <div className="absolute top-0 left-0 w-screen h-screen bg-black  z-100">
-      Loading
-    </div>
+    <main className="absolute top-0 left-0 w-screen h-screen text-2xl bg-red-500 z-100">
+      <p>Loading</p>
+    </main>
   );
 };
 

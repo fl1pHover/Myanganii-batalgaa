@@ -1,4 +1,4 @@
-import { MantineProvider } from "@mantine/core";
+import { createTheme, MantineProvider } from "@mantine/core";
 
 const Provider = ({ children }) => (
   <MantineProvider>{children}</MantineProvider>

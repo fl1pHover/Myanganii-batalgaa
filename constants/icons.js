@@ -8,6 +8,8 @@ import { FaFacebook } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaTwitter } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
+import { MdLocalPhone } from "react-icons/md";
+import { IoMdMailUnread } from "react-icons/io";
 
 const Hamburger = (props) => (
   <span className={props.className}>
@@ -38,24 +40,40 @@ const RightArrow = (props) => (
     <GoArrowRight />
   </span>
 );
+
 const FacebookIcon = (props) => (
   <span className={props.className}>
     <FaFacebook />
   </span>
 );
+
 const InstagramIcon = (props) => (
   <span className={props.className}>
     <RiInstagramFill />
   </span>
 );
+
 const TwitterIcon = (props) => (
   <span className={props.className}>
     <FaTwitter />
   </span>
 );
+
 const GoogleIcon = (props) => (
   <span className={props.className}>
     <FaGoogle />
+  </span>
+);
+
+const PhoneIcon = (props) => (
+  <span className={props.className}>
+    <MdLocalPhone />
+  </span>
+);
+
+const MailIcon = (props) => (
+  <span className={props.className}>
+    <IoMdMailUnread />
   </span>
 );
 
@@ -69,4 +87,6 @@ export {
   InstagramIcon,
   TwitterIcon,
   GoogleIcon,
+  PhoneIcon,
+  MailIcon,
 };

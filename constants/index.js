@@ -1,4 +1,12 @@
-import { FacebookIcon, GoogleIcon, InstagramIcon, TwitterIcon } from "./icons";
+import IconBundle from "@/components/ui/IconBundle";
+import {
+  FacebookIcon,
+  GoogleIcon,
+  InstagramIcon,
+  MailIcon,
+  PhoneIcon,
+  TwitterIcon,
+} from "./icons";
 
 export const phone = "(+437) 800-2078";
 export const logo = "./img/logo.png";
@@ -220,5 +228,21 @@ export const socials = [
   {
     icon: <GoogleIcon />,
     url: "https://www.google.com/",
+  },
+];
+
+export const contactData = [
+  {
+    id: 1,
+    icon: <PhoneIcon />,
+    title: "Direct Call",
+    info: "+1 347 800 2078 +1 347 800 3562 ",
+  },
+  {
+    id: 2,
+    icon: <MailIcon />,
+    title: "Get In Touch",
+    info: "hello@sitename.com \n www.sitename.com",
+    additional: <IconBundle />,
   },
 ];

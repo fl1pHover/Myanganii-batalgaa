@@ -14,7 +14,7 @@ const AchievementHero = () => {
         <SectionTitle section="FUN FACT" title="Our Achievements" />
 
         <div className="inline-flex flex-col mb-10 gap-14 lg:mb-0">
-          <p className="">
+          <p className="p">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam quis nostrud.

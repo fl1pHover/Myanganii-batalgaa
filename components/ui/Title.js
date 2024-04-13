@@ -25,12 +25,9 @@ const LineTitle = ({ title }) => {
 };
 
 const PageHeader = ({ header, currentPage }) => {
-  console.log(navigation[0].title);
   return (
     <div className="grid w-full grid-cols-1 md:grid-cols-2">
-      <h1
-        className={mergeNames("sectionTitle_semibold text-center md:text-left")}
-      >
+      <h1 className={mergeNames("largeTitle text-center md:text-left")}>
         {header}
       </h1>
       <div className="flex items-center gap-2 pt-10 ml-auto mr-auto md:mr-0 uppercase text-[16px]">

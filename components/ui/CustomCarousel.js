@@ -15,7 +15,7 @@ const CustomCarousel = ({ data }) => {
   return (
     <Carousel
       // Size
-      height={400}
+      height={450}
       slideSize={{
         base: "100%",
         xs: "75%",
