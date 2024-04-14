@@ -36,24 +36,31 @@ export default function DynamicProjectPage({ params }) {
         </Container>
       ) : (
         <>
-          <Container>
+          <Container className="sectionPadding_top"></Container>
+          {/* Cover tom zurag bn gvl Container aasa gadna bhar bn */}
+
+          {data?.image == "" ? (
+            <div className="h-[200px] w-full bg-gray-0 grid place-items-center">
+              Зураг байхгүй байна
+            </div>
+          ) : (
+            <img src={data?.image} className="banner_container" />
+          )}
+
+          <Container className={"flex flex-col sectionPadding_top"}>
             <PageHeader
               header={data?.title}
               currentPage={`Projects / ${data?.title.slice(0, 10)}`}
             />
-          </Container>
-          {/* Cover tom zurag bn gvl Container aasa gadna bhar bn */}
-          {/* <img src={data?.image} className="banner_container" /> */}
-          <Container className={"flex flex-col sectionPadding_top"}>
-            <h1 className="smallTitle">{data?.title}</h1>
-            <p className="p">{data?.description}</p>
-            <img
-              src={
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMIKEjlRD9iwYh4snbp8-8eif8gzGHz9QNr1PqGl0UNQ&s"
-              }
-              alt="Project Images"
-              className="object-cover aspect-2/1"
-            />
+            <div className="flex flex-col gap-6 py-20">
+              <h1 className="smallTitle">{data?.title}</h1>
+              <p className="p">{data?.description}</p>
+              <img
+                src={data?.image}
+                alt="Project Images"
+                className="object-cover aspect-2/1"
+              />
+            </div>
           </Container>
         </>
       )}
