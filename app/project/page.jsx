@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { useEffect, useState } from "react";
 import PortfolioCard from "./PortfolioCard";
+import Loading from "./loading";
 
 const categories = [
   {
@@ -82,15 +83,20 @@ export default function ProjectPage() {
                   <div key={i}>
                     <PortfolioCard
                       // image="https://demo.xstheme.com/lacasa/wp-content/uploads/sites/13/2018/01/10-390x254.jpeg"
-                      image={project.image}
+                      image={
+                        project.image == "" &&
+                        "https://st4.depositphotos.com/14953852/24787/v/450/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"
+                      }
                       title={project.title}
                       link={`/project/${project._id}`}
                     />
                   </div>
                 );
               })}
+
               {/* {/* <div> {JSON.stringify(project)}</div> */}
             </div>
+            <Loading />
           </Suspense>
         </section>
       </Container>

@@ -4,7 +4,7 @@ import React from "react";
 
 const PortfolioCard = ({ image, title, description, link }) => {
   return (
-    <div className="max-w-[390px] lg:w-full aspect-[3/2] relative group overflow-hidden ">
+    <div className="max-w-[390px] lg:w-full aspect-[3/2] relative group overflow-hidden border border-1 border-gray-1">
       <img
         src={`${image}`}
         className="absolute top-0 left-0 z-0 object-cover w-full h-full"

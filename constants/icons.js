@@ -10,6 +10,8 @@ import { FaTwitter } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import { MdLocalPhone } from "react-icons/md";
 import { IoMdMailUnread } from "react-icons/io";
+import { SiMaildotru } from "react-icons/si";
+import { FaRegUser } from "react-icons/fa";
 
 const Hamburger = (props) => (
   <span className={props.className}>
@@ -77,6 +79,18 @@ const MailIcon = (props) => (
   </span>
 );
 
+const AtIcon = (props) => (
+  <span className={props.className}>
+    <SiMaildotru />
+  </span>
+);
+
+const UserIcon = (props) => (
+  <span className={props.className}>
+    <FaRegUser />
+  </span>
+);
+
 export {
   Hamburger,
   Bookmark,
@@ -89,4 +103,6 @@ export {
   GoogleIcon,
   PhoneIcon,
   MailIcon,
+  AtIcon,
+  UserIcon,
 };
