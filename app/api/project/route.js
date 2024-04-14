@@ -9,12 +9,13 @@ import { verifyUser } from "../auth/verifyUser";
 
 export async function GET(req) {
   await dbConnect();
+  const token = cookies().get('token')
   try {
     const user = await verifyUser(token.value);
 
     if (user) {
       const res = await Project.find();
-      return NextResponse.json(res, { status: 200 });
+      return NextResponse.json({data: res}, { status: 200 });
     } else {
       return NextResponse.json("Нэвтрэнэ үү.", { status: 201 });
     }

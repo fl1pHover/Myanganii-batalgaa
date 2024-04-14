@@ -2,21 +2,20 @@ import { google } from "googleapis";
 import { NextResponse } from "next/server";
 
 import { Readable } from "node:stream";
+const auth = new google.auth.GoogleAuth({
+  scopes: "https://www.googleapis.com/auth/drive",
+  projectId: process.env.GDRIVE_PROJECTID,
+  credentials: {
+    client_id: process.env.GDRIVE_CLIENTID,
+    client_email: process.env.GDRIVE_CLIENTEMAIL,
+    private_key: process.env.GDRIVE_PRIVTKEY.replace(/\\n/gm, "\n"),
+  },
+});
 
 export async function POST(request) {
   const formData = await request.formData();
   const file = formData.getAll("file");
   const filename = formData.getAll("fileName");
-
-  const auth = new google.auth.GoogleAuth({
-    scopes: "https://www.googleapis.com/auth/drive",
-    projectId: process.env.GDRIVE_PROJECTID,
-    credentials: {
-      client_id: process.env.GDRIVE_CLIENTID,
-      client_email: process.env.GDRIVE_CLIENTEMAIL,
-      private_key: process.env.GDRIVE_PRIVTKEY.replace(/\\n/gm, "\n"),
-    },
-  });
 
   const uploadToGooglDrive = async (fileBuffer) => {
     const fileMetadata = {
@@ -39,18 +38,21 @@ export async function POST(request) {
   try {
     let files = [];
     file.map((f) => {
-      files.push(new Promise(async (resolve, reject) => {
-        const fileBuffer = f.stream();
+      files.push(
+        new Promise(async (resolve, reject) => {
+          const fileBuffer = f.stream();
 
-        const res = await uploadToGooglDrive(fileBuffer);
-        resolve(res)
-      }))
+          const res = await uploadToGooglDrive(fileBuffer);
+          resolve(res);
+        })
+      );
     });
 
-    let uploadedFiles = await Promise.all(files)
-   
+    let uploadedFiles = await Promise.all(files);
+
     return NextResponse.json(uploadedFiles);
   } catch (error) {
     return NextResponse.json({ success: false });
   }
 }
+

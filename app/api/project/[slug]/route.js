@@ -14,7 +14,7 @@ export async function GET(req, { params }) {
 
     const res = await Project.findById(params.slug);
 
-    return NextResponse.json(res, { status: 200 });
+    return NextResponse.json({data: res}, { status: 200 });
   } catch (error) {
     return NextResponse.json({ error: `${error}` });
   }
