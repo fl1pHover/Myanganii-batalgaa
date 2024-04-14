@@ -29,7 +29,6 @@ export async function POST(req) {
     const data = await req.json();
     const cookie = cookies();
     const token = cookie.get("token");
-    console.log(data);
     if (token.value != "" && token.value != null) {
       const user = await verifyUser(token.value);
 

@@ -15,6 +15,9 @@ const auth = new google.auth.GoogleAuth({
 export async function POST(request) {
   const formData = await request.formData();
   const file = formData.getAll("file");
+  if(typeof file[0] == 'string' ) {
+    return NextResponse.json(file);
+  }
   const filename = formData.getAll("fileName");
 
   const uploadToGooglDrive = async (fileBuffer) => {

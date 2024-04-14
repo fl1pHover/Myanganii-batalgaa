@@ -12,7 +12,7 @@ const auth = new google.auth.GoogleAuth({
 export async function GET(request, { params: { id } }) {
   try {
     const defaultImage = NextResponse.redirect(
-      new URL("/logo.png", process.env.NEXT_PUBLIC_BASE_URL),
+      new URL("/img/logo.png", process.env.NEXT_PUBLIC_BASE_URL),
       {
         status: 302,
       }

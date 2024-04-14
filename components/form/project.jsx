@@ -9,6 +9,7 @@ import {
   FileButton,
   Grid,
   Group,
+  Loader,
   Select,
   Textarea,
   TextInput,
@@ -16,31 +17,33 @@ import {
 import { ProjectStrings } from "../../util/string";
 import { DateInput, DatePicker } from "@mantine/dates";
 import { useRef } from "react";
-export const ProjectForm = ({ submit }) => {
+export const ProjectForm = ({ submit, data, loading }) => {
   const resetRef = useRef(null);
   const form = useForm({
     initialValues: {
-      title: "",
-      description: "",
-      type: "ADMIN",
-      date: null,
-      image: [],
+      title: data?.title ?? "",
+      description: data?.description ?? "",
+      type: data?.type ?? "ADMIN",
+      date: data?.date ?? null,
+      image: data?.image ?? [],
     },
 
     validate: {
       title: (value) =>
-        !validateString(value ?? '', ProjectStrings.title).validated ? validateString(value ?? '').message : null,
+        !validateString(value ?? "", ProjectStrings.title).validated
+          ? validateString(value ?? "", ProjectStrings.title).message
+          : null,
       description: (value) =>
-        !validateString(value ?? '', ProjectStrings.description).validated ? validateString(value ?? '').message : null,
-      image: (value) =>
-        value.length == 0 ? "Зураг оруулна уу." : null,
+        !validateString(value ?? "", ProjectStrings.description).validated
+          ? validateString(value ?? "", ProjectStrings.description).message
+          : null,
+      image: (value) => (value.length == 0 ? "Зураг оруулна уу." : null),
       date: (value) => (value == null ? "Огноо оруулна уу" : null),
     },
   });
 
   return (
     <>
-   
       <form onSubmit={form.onSubmit((values) => submit(values))}>
         <Box>
           <TextInput
@@ -65,6 +68,7 @@ export const ProjectForm = ({ submit }) => {
             />
 
             <DateInput
+              valueFormat="DD/MM/YYYY"
               onChange={(e) => form.setValues((prev) => ({ ...prev, date: e }))}
               label={ProjectStrings.date + " оруулна уу"}
               placeholder={ProjectStrings.date + " оруулна уу"}
@@ -132,19 +136,29 @@ export const ProjectForm = ({ submit }) => {
                       </ActionIcon>
                     </Box>
 
-                    <img
-                      className="object-contain h-full w-full"
-                      src={`${(window.URL || window.webkitURL).createObjectURL(
-                        img
-                      )}`}
-                      alt=""
-                    />
+                    {typeof img == "string" ? (
+                      <img
+                        className="object-contain h-full w-full"
+                        src={`${`/api/upload/${img}`}`}
+                        alt=""
+                      />
+                    ) : (
+                      <img
+                        className="object-contain h-full w-full"
+                        src={`${(
+                          window.URL || window.webkitURL
+                        ).createObjectURL(img)}`}
+                        alt=""
+                      />
+                    )}
                   </Box>
                 </Grid.Col>
               );
             })}
           </Grid>
-          <Button type="submit">Илгээх</Button>
+          <Button type="submit" disabled={loading}>
+            {loading ? <Loader /> : "Илгээх"}
+          </Button>
         </Box>
       </form>
     </>
