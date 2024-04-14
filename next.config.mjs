@@ -6,7 +6,6 @@ const nextConfig = {
     NEXT_PUBLIC_JWT_SECRET: "MYNGANIIBATALGAA",
     TURNSTILE_SECRET_KEY: "asdf",
   },
-
 };
 
 export default nextConfig;

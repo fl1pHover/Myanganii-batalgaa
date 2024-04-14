@@ -35,7 +35,12 @@ module.exports = {
         xl: "1280px",
       },
 
-      aspectRatio: { "3/2": "3 / 2", "5/4": "5 / 4", "6/5": "6 / 5" },
+      aspectRatio: {
+        "2/1": "2 / 1",
+        "3/2": "3 / 2",
+        "5/4": "5 / 4",
+        "6/5": "6 / 5",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -55,6 +60,10 @@ module.exports = {
           1: "#c5c5c5",
           2: "#777777",
           3: "#555555",
+        },
+        loader: {
+          dark_green: "#00d084",
+          yellow: "#fcb900",
         },
         stroke: {
           1: "#26242C",

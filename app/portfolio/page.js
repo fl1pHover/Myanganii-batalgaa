@@ -3,7 +3,7 @@ import Container from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/Title";
 import mergeNames from "@/util/mergeNames";
 import React, { Suspense, useState } from "react";
-import PortfolioCard from "./PortfolioCard";
+import PortfolioCard from "../project/PortfolioCard";
 
 const categories = [
   {
@@ -26,6 +26,7 @@ const categories = [
 
 const Portfolio = () => {
   const [select, setSelect] = useState(1);
+  console.log(data.title);
   return (
     <section className="flex flex-col sectionPadding_top">
       <Container className="flex flex-col gap-20 md:gap-28">

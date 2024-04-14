@@ -2,7 +2,7 @@ import LinkMore from "@/components/ui/LinkMore";
 import mergeNames from "@/util/mergeNames";
 import React from "react";
 
-const PortfolioCard = ({ image, title, description }) => {
+const PortfolioCard = ({ image, title, description, link }) => {
   return (
     <div className="max-w-[390px] lg:w-full aspect-[3/2] relative group overflow-hidden ">
       <img
@@ -25,7 +25,7 @@ const PortfolioCard = ({ image, title, description }) => {
             <h1 className={mergeNames("smallTitle", "text-white")}>{title}</h1>
             <p className="text-base text-color-3 line-clamp-4">{description}</p>
           </div>
-          <LinkMore href="/" title="Read More" green />
+          <LinkMore href={link} title="Read More" green />
         </div>
       </div>
     </div>

@@ -26,8 +26,8 @@ export const navigation = [
   },
   {
     id: "2",
-    title: "Portfolios",
-    url: "/portfolio",
+    title: "Projects",
+    url: "/project",
   },
   {
     id: "3",
@@ -207,6 +207,10 @@ export const footerData = [
       {
         info: "Portfolios",
         link: "/portfolio",
+      },
+      {
+        info: "Contact",
+        link: "/contact",
       },
     ],
   },
