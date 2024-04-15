@@ -30,7 +30,7 @@ const ScrollTop = () => {
   return (
     <button
       className={mergeNames(
-        "fixed bottom-10 right-10 p-4 duration-400 rounded-2xl",
+        "fixed bottom-10 right-10 p-4 duration-400 rounded-2xl z-50",
         "bg-color-2 text-white text-2xl ",
         isVisible ? "visible opacity-100" : "invisible opacity-0"
       )}

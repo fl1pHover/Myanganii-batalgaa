@@ -52,7 +52,7 @@ const Navbar = () => {
             ? "bg-white shadow-lg"
             : pathname == "/"
             ? "bg-transparent"
-            : "bg-gray-0"
+            : "bg-gray-0 shadow-lg"
         )}
       >
         <a href="/">

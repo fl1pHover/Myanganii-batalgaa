@@ -17,7 +17,7 @@ export const AdminSideBar = () => {
           Үндсэн
         </p>
       </Link>
-      <Link href={`${admin}register`}>
+      {/* <Link href={`${admin}register`}>
         <p
           className={`mt-2 py-1 mx-3 border-b-2 ${
             url?.includes("/register") ? "border-green-500" : "border-gray-500"
@@ -27,7 +27,7 @@ export const AdminSideBar = () => {
         >
           Админ нэмэх
         </p>
-      </Link>
+      </Link> */}
       {/* <Link href={`${admin}register`}>
       <p>Шинээр админ нэмэх</p>
     </Link> */}

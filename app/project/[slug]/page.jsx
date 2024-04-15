@@ -2,6 +2,7 @@
 import Loading from "@/components/loading";
 import Container from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/Title";
+import mergeNames from "@/util/mergeNames";
 import { useEffect, useState } from "react";
 
 export default function DynamicProjectPage({ params }) {
@@ -23,7 +24,7 @@ export default function DynamicProjectPage({ params }) {
   }, [params.slug]);
   // return <>{JSON.stringify(data)}</>;
   // console.log(data);
-  console.log(data);
+  console.log(data?.image.length);
   return (
     <section>
       {data == undefined ? (
@@ -37,30 +38,37 @@ export default function DynamicProjectPage({ params }) {
         </Container>
       ) : (
         <>
-          <Container className="sectionPadding_top"></Container>
-          {/* Cover tom zurag bn gvl Container aasa gadna bhar bn */}
-
-          {data?.image.length == 0 ? (
-            <div className="h-[200px] w-full bg-gray-0 grid place-items-center">
-              Зураг байхгүй байна
-            </div>
-          ) : (
-            // <img src={data?.image} className="banner_container" />
-            <div className="h-[200px] w-full bg-gray-0 grid place-items-center">
-              Зураг байхгүй байна
-            </div>
-          )}
-
-          <Container className={"flex flex-col sectionPadding_top"}>
+          <Container className="sectionPadding_top">
             <PageHeader
               header={data?.title}
               currentPage={`Projects / ${data?.title.slice(0, 10)}`}
             />
-            <div className="flex flex-col gap-6 py-20">
+          </Container>
+          {/* Cover tom zurag bn gvl Container aasa gadna bhar bn */}
+
+          <div
+            className={mergeNames(
+              " bg-gray-0 banner_container",
+              // "aspect-2/1"
+              "h-[40vh]"
+            )}
+          >
+            {data?.image.length == 0 ? (
+              <div className="mx-auto my-auto">Зураг байхгүй байна</div>
+            ) : (
+              <img
+                src={`/api/upload/${data?.image}`}
+                className="flex items-center object-cover w-full h-full text-center justify-evenly"
+                alt="Зураг байхгүй байна"
+              />
+            )}
+          </div>
+          <Container className={"flex flex-col"}>
+            <div className="flex flex-col gap-6">
               <h1 className="smallTitle">{data?.title}</h1>
               <p className="p">{data?.description}</p>
               <img
-                src={data?.image}
+                src={`/api/upload/${data?.image}`}
                 alt="Project Images"
                 className="object-cover border aspect-2/1 border-1 border-gray-1"
               />

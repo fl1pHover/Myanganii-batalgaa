@@ -6,7 +6,7 @@ const PortfolioCard = ({ image, title, description, link }) => {
   return (
     <div className="max-w-[390px] lg:w-full aspect-[3/2] relative group overflow-hidden border border-1 border-gray-1">
       <img
-        src={`${image}`}
+        src={`/api/upload/${image}`}
         className="absolute top-0 left-0 z-0 object-cover w-full h-full"
         alt=""
       />
@@ -25,7 +25,7 @@ const PortfolioCard = ({ image, title, description, link }) => {
             <h1 className={mergeNames("smallTitle", "text-white")}>{title}</h1>
             <p className="text-base text-color-3 line-clamp-4">{description}</p>
           </div>
-          <LinkMore href={link} title="Read More" green />
+          <LinkMore href={`/project/${link}`} title="Read More" green />
         </div>
       </div>
     </div>

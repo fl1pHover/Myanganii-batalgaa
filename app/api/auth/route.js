@@ -12,7 +12,6 @@ export async function GET(req) {
 
     let id = searchParams.get("id");
     const users = await User.findById(id);
-    console.log(users);
     return NextResponse.json({}, { status: 200 });
   } catch (error) {
     return NextResponse.json({ error: `${error}` });
@@ -23,7 +22,6 @@ export async function POST(req) {
   try {
     const data = await req.json();
     const cookie = cookies();
-    console.log(data);
     // let id = searchParams.get('id')
     const user = await User.findOne({
       $or: [

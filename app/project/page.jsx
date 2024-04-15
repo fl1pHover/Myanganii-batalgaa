@@ -76,27 +76,27 @@ export default function ProjectPage() {
             ))}
           </div>
           {/* Cards */}
-          <Suspense fallback={<p>loading</p>}>
-            <div className="grid w-full grid-cols-1 gap-6 mx-auto md:grid-cols-2 lg:grid-cols-3 duration-400">
-              {projects?.map((project, i) => {
-                return (
-                  <div key={i}>
-                    <PortfolioCard
-                      // image="https://demo.xstheme.com/lacasa/wp-content/uploads/sites/13/2018/01/10-390x254.jpeg"
-                      image={
-                        project.image == "" &&
-                        "https://st4.depositphotos.com/14953852/24787/v/450/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"
-                      }
-                      title={project.title}
-                      link={`/project/${project._id}`}
-                    />
-                  </div>
-                );
-              })}
-
-              {/* {/* <div> {JSON.stringify(project)}</div> */}
-            </div>
-            <Loading />
+          <Suspense fallback={<Loading />}>
+            <div className="grid w-full grid-cols-1 gap-6 mx-auto md:grid-cols-2 lg:grid-cols-3 duration-400"></div>
+            {projects == undefined ? (
+              <Loading />
+            ) : (
+              <>
+                {projects?.map((project, i) => {
+                  return (
+                    <div key={i}>
+                      <PortfolioCard
+                        // image="https://demo.xstheme.com/lacasa/wp-content/uploads/sites/13/2018/01/10-390x254.jpeg"
+                        image={project.image}
+                        title={project.title}
+                        link={project._id}
+                      />
+                    </div>
+                  );
+                })}
+              </>
+            )}
+            {/* {/* <div> {JSON.stringify(project)}</div> */}
           </Suspense>
         </section>
       </Container>

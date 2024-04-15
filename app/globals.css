@@ -82,7 +82,7 @@ h6 {
 }
 
 .sectionPadding_top {
-  @apply pt-[180px];
+  @apply pt-[120px] lg:pt-[180px];
 }
 
 .navbar {

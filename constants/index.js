@@ -9,9 +9,9 @@ import {
 } from "./icons";
 
 export const phone = "(+437) 800-2078";
-export const logo = "./img/logo.png";
-export const bg = "./img/hero-bg.jpg";
-export const bg_footer = "./img/hero-bg.jpg";
+export const logo = "/img/logo.png";
+export const bg = "/img/hero-bg.jpg";
+export const bg_footer = "/img/hero-bg.jpg";
 
 export const navigation = [
   {
