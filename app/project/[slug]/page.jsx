@@ -23,6 +23,7 @@ export default function DynamicProjectPage({ params }) {
   }, [params.slug]);
   // return <>{JSON.stringify(data)}</>;
   // console.log(data);
+  console.log(data);
   return (
     <section>
       {data == undefined ? (
@@ -39,12 +40,15 @@ export default function DynamicProjectPage({ params }) {
           <Container className="sectionPadding_top"></Container>
           {/* Cover tom zurag bn gvl Container aasa gadna bhar bn */}
 
-          {data?.image == "" ? (
+          {data?.image.length == 0 ? (
             <div className="h-[200px] w-full bg-gray-0 grid place-items-center">
               Зураг байхгүй байна
             </div>
           ) : (
-            <img src={data?.image} className="banner_container" />
+            // <img src={data?.image} className="banner_container" />
+            <div className="h-[200px] w-full bg-gray-0 grid place-items-center">
+              Зураг байхгүй байна
+            </div>
           )}
 
           <Container className={"flex flex-col sectionPadding_top"}>
@@ -58,7 +62,7 @@ export default function DynamicProjectPage({ params }) {
               <img
                 src={data?.image}
                 alt="Project Images"
-                className="object-cover aspect-2/1"
+                className="object-cover border aspect-2/1 border-1 border-gray-1"
               />
             </div>
           </Container>

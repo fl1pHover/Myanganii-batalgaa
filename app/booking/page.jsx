@@ -23,9 +23,9 @@ export default function Booking() {
     <>
       <form
         onSubmit={form.onSubmit(console.log)}
-        className="flex flex-col min-w-[350px] max-w-[500px] mx-auto gap-6"
+        className="flex flex-col min-w-[350px] max-w-[400px] mx-auto gap-6"
       >
-        <TextInput
+        {/* <TextInput
           label="Нэр"
           size="md"
           className=""
@@ -57,7 +57,7 @@ export default function Booking() {
           className="text-black uppercase"
         >
           Илгээх
-        </Button>
+        </Button> */}
       </form>
     </>
   );
