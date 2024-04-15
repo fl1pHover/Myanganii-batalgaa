@@ -43,14 +43,16 @@ const Hero = () => {
       >
         <Suspense fallback={<p>loading</p>}>
           {project.slice(0, 3).map((item) => (
-            <HeroCard
-              key={item.id}
-              href={item.url}
-              title={item.title}
-              description={item.description}
-              image={item.image}
-              green
-            />
+            <Suspense fallback={<p>asdasd</p>}>
+              <HeroCard
+                key={item.id}
+                href={item.url}
+                title={item.title}
+                description={item.description}
+                image={item.image}
+                green
+              />
+            </Suspense>
           ))}
         </Suspense>
       </Container>

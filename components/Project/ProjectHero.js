@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Container from "../ui/Container";
 import { projects } from "@/constants";
 import CustomCarousel from "../ui/CustomCarousel";

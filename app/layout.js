@@ -28,12 +28,18 @@ export default async function RootLayout({ children }) {
       <body className={inter.className}>
         <Provider>
           <Suspense fallback={<Loading />}>
-            <main className={!admin ? "app" : ""}>
+            {/* <main className={!admin ? "app" : ""}>
               {!admin && <Navbar />}
               {children}
 
               {!admin && <ScrollTop />}
               {!admin && <Footer />}
+            </main> */}
+            <main className={"app"}>
+              <Navbar />
+              {children}
+              <ScrollTop />
+              <Footer />
             </main>
           </Suspense>
         </Provider>

@@ -56,7 +56,7 @@ const Footer = () => {
           <input type="email" className="input" placeholder="Email Address" />
         </div>
       </div>
-      <Container className="relative flex flex-col items-center justify-between md:flex-row z-1">
+      <Container className="relative flex flex-col items-center justify-between text-color-0 md:flex-row z-1">
         <p>Copyright xstheme | all right reserved</p>
         <IconBundle />
       </Container>

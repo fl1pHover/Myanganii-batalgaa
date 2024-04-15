@@ -2,9 +2,8 @@
 
 import { useRouter } from "next/navigation";
 
-
 export default function AuthPage() {
-    const router = useRouter()
+  const router = useRouter();
   const submit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -14,21 +13,24 @@ export default function AuthPage() {
     const phone = formData.get("phone");
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/register`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username: username,
-          password: password,
-          phone: phone,
-          email: email,
-        }),
-      }).then((d) => {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/register`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: username,
+            password: password,
+            phone: phone,
+            email: email,
+          }),
+        }
+      ).then((d) => {
         console.log(d);
-        if(d.status == 201) {
-            router.push('/login')
+        if (d.status == 201) {
+          router.push("/login");
         }
         return d.json();
       });
@@ -43,19 +45,19 @@ export default function AuthPage() {
         <input
           type="text"
           name="username"
-          className="border-solid border-2 "
+          className="border-2 border-solid "
           placeholder="Username"
         />
         <input
           type="number"
           name="phone"
-          className="border-solid border-2 "
+          className="border-2 border-solid "
           placeholder="Phone"
         />
         <input
           type="text"
           name="email"
-          className="border-solid border-2 "
+          className="border-2 border-solid "
           placeholder="Email"
         />
 
@@ -63,7 +65,7 @@ export default function AuthPage() {
           type="password"
           name="password"
           placeholder="Password"
-          className="border-solid border-2 "
+          className="border-2 border-solid "
         />
         <button type="submit">Submit</button>
       </form>

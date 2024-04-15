@@ -5,11 +5,11 @@ import mergeNames from "@/util/mergeNames";
 
 const HeroCard = ({ image, title, description }) => {
   return (
-    <div className="w-[340px] lg:w-full aspect-[6/5] relative group overflow-hidden ">
+    <div className="w-[340px] lg:w-full aspect-[6/5] relative group overflow-hidden border border-1 border-gray-1">
       <img
-        src={`/${image}`}
-        className="absolute top-0 left-0 z-0 object-cover w-full h-full"
-        alt=""
+        src={`/api/upload/${image}`}
+        className="absolute top-0 left-0 z-0 grid object-cover w-full h-full place-items-center bg-gray-1 text-gray-2"
+        alt="Зураггүй байна"
       />
       <div
         className={mergeNames(

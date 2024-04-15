@@ -44,7 +44,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="relative">
+    <nav className="relative text-black">
       <div
         className={mergeNames(
           "navbar",
@@ -94,18 +94,23 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={mergeNames(openNavigation && "navbar_mobile")}>
+      <div
+        className={mergeNames(
+          openNavigation ? "visible opacity-100" : "invisible opacity-0",
+          "navbar_mobile transition-all duration-400 "
+        )}
+      >
         <button
           className={mergeNames(
             "hoverEffect",
-            openNavigation ? " flex" : "ml-auto hidden duration-400",
-            "absolute z-10 ml-auto top-10 right-10 py-5 hover:text-color-2"
+            openNavigation ? "flex" : "ml-auto hidden duration-400",
+            "absolute z-10 ml-auto top-10 right-10 py-5 hover:text-color-2 transition-all"
           )}
           onClick={toggleNavigation}
         >
           <Close className="text-[50px]" />
         </button>
-        <div className={mergeNames(openNavigation ? "navbar_items" : "hidden")}>
+        <div className={mergeNames(openNavigation && "", "navbar_items")}>
           {navigation.map((item) => (
             <a
               key={item.id}

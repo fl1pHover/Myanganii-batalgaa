@@ -8,7 +8,7 @@ import {
   TwitterIcon,
 } from "./icons";
 
-export const phone = "(+437) 800-2078";
+export const phone = "(+976) 0000-0000";
 export const logo = "/img/logo.png";
 export const bg = "/img/hero-bg.jpg";
 export const bg_footer = "/img/hero-bg.jpg";
@@ -16,29 +16,29 @@ export const bg_footer = "/img/hero-bg.jpg";
 export const navigation = [
   {
     id: "0",
-    title: "Home",
+    title: "Нүүр",
     url: "/",
   },
   {
     id: "1",
-    title: "About Us",
+    title: "Бидний тухай",
     url: "/about",
   },
   {
     id: "2",
-    title: "Projects",
+    title: "Прожектууд",
     url: "/project",
   },
   {
     id: "3",
-    title: "Contact",
+    title: "Холбоо барих",
     url: "/contact",
   },
-  {
-    id: "4",
-    title: "404",
-    url: "/404",
-  },
+  // {
+  //   id: "4",
+  //   title: "404",
+  //   url: "/404",
+  // },
 ];
 
 export const project = [
