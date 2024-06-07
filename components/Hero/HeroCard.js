@@ -3,11 +3,11 @@ import LinkMore from "../ui/LinkMore";
 
 import mergeNames from "@/util/mergeNames";
 
-const HeroCard = ({ image, title, description }) => {
+const HeroCard = ({ image, title, description, front = false}) => {
   return (
     <div className="w-[340px] lg:w-full aspect-[6/5] relative group overflow-hidden border border-1 border-gray-1">
       <img
-        src={`/api/upload/${image}`}
+        src={front ? image : `/api/upload/${image}`}
         className="absolute top-0 left-0 z-0 grid object-cover w-full h-full place-items-center bg-gray-1 text-gray-2"
         alt="Зураггүй байна"
       />
@@ -26,7 +26,7 @@ const HeroCard = ({ image, title, description }) => {
             <h1 className={mergeNames("smallTitle", "text-white")}>{title}</h1>
             <p className="p_light line-clamp-4">{description}</p>
           </div>
-          <LinkMore href="/" title="Read More" green />
+          {/* <LinkMore href="/" title="Read More" green /> */}
         </div>
       </div>
     </div>

@@ -1,9 +1,19 @@
+"use client";
 import Container from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/Title";
 import { contactData } from "@/constants";
-import React from "react";
+import React, { useState } from "react";
+import { getSheetData } from "../api/sheet/route";
 
 const Contact = () => {
+  const [payload, setPayload] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const handleOnGetSheetDataClick = async () => {
+    await getSheetData(payload.name, payload.email, payload.message);
+  };
   return (
     <section className="flex flex-col sectionPadding_top">
       <Container className="flex flex-col gap-20 md:gap-28">
@@ -30,19 +40,35 @@ const Contact = () => {
         <div className="footer_grid">
           <h1 className="largeTitle">Drop A Mail</h1>
 
-          <form action="" className="grid grid-cols-2 col-span-2 gap-8">
+          <form
+            action=""
+            onSubmit={handleOnGetSheetDataClick}
+            className="grid grid-cols-2 col-span-2 gap-8"
+          >
             <input
+              onChange={(e) =>
+                setPayload((prev) => ({ ...prev, name: e.target.value }))
+              }
               type="text"
+              required
               placeholder="Name"
               className="col-span-1 footer_input p"
             />
             <input
+              onChange={(e) =>
+                setPayload((prev) => ({ ...prev, email: e.target.value }))
+              }
               type="email"
               placeholder="Email"
+              required
               className="col-span-1 footer_input p"
             />
             <textarea
+              required
               row="10"
+              onChange={(e) =>
+                setPayload((prev) => ({ ...prev, message: e.target.value }))
+              }
               placeholder="Type you message"
               className="col-span-2 footer_input p min-h-[100px]"
             />

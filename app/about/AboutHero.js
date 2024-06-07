@@ -4,23 +4,22 @@ import mergeNames from "@/util/mergeNames";
 import { LineTitle, SectionTitle } from "../../components/ui/Title";
 import Container from "../../components/ui/Container";
 import { bg } from "@/constants";
+import { Strings } from "@/constants/string";
 
 const AboutHero = () => {
   return (
     <Container className={mergeNames("sectionGrid")}>
       <div className="inline-flex flex-col gap-10">
         <SectionTitle
-          section="about us"
-          title="We Over 15 Years To Design Thousand Of Successful Dreamst"
+          section={Strings.about}
+          title={Strings.aboutText}
         />
 
         <div className="inline-flex flex-col gap-8 mb-10 lg:mb-0">
           <p className="w-full lg:w-[80%] p">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim.
+            {Strings.aboutDescription}
           </p>
-          <LinkMore href="/about" title="Learn More" />
+          <LinkMore href="/about" title={Strings.more} />
         </div>
       </div>
       <img src={bg} className="aspect-[6/5] object-cover h-full" alt="" />

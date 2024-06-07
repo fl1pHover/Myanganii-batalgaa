@@ -37,20 +37,21 @@ const Hero = () => {
       </div>
       <Container
         className={mergeNames(
-          "px-8 py-8 bg-white grid grid-cols-1 lg:grid-cols-3 gap-8 justify-between place-items-center",
+          "px-8 py-8 bg-white grid grid-cols-1 lg:grid-cols-4 gap-4 justify-between place-items-center",
           "lg:-translate-y-[100px]"
         )}
       >
         <Suspense fallback={<p>loading</p>}>
-          {project.slice(0, 3).map((item) => (
-            <Suspense fallback={<p>asdasd</p>}>
+          {project.map((item, i) => (
+            <Suspense fallback={<p>asdasd</p>} key={i}>
               <HeroCard
                 key={item.id}
-                href={item.url}
+                // href={item.url}
                 title={item.title}
                 description={item.description}
-                image={item.image}
+                image={`/img/${item.image}`}
                 green
+                front={true}
               />
             </Suspense>
           ))}

@@ -1,3 +1,4 @@
+import { postOrder } from "@/app/api/sheet/route";
 import { AtIcon, PhoneIcon, UserIcon } from "@/constants/icons";
 import { Box, Button, Textarea, TextInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
@@ -14,6 +15,10 @@ export const BookingForm = () => {
         value.length !== 8 ? "8 оронтой утасны дугаар оруулна уу" : null,
     },
   });
+
+  const send = () => {
+    postOrder('asdf', 'asdf', 'asdf')
+  }
   return (
     <form onSubmit={form.onSubmit(console.log)}>
       <Box className="flex flex-col min-w-[350px] max-w-[400px] mx-auto gap-6">

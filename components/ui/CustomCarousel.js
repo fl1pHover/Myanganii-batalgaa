@@ -39,7 +39,7 @@ const CustomCarousel = ({ data }) => {
         <Carousel.Slide key={i.id}>
           <div className="relative h-full overflow-hidden group ">
             <img
-              src={`/${i.image}`}
+              src={`${i.image}`}
               className="absolute top-0 left-0 z-0 object-cover w-full h-full"
               alt=""
             />
@@ -63,7 +63,7 @@ const CustomCarousel = ({ data }) => {
                   >
                     {i.title}
                   </h1>
-                  <LinkMore href="/" title="Read More" green />
+                  <LinkMore href="/" title="Дэлгэрэнгүй" green />
                 </div>
               </div>
             </div>

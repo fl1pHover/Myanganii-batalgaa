@@ -80,7 +80,7 @@ const Navbar = () => {
             className="flex items-center gap-1 py-2 hoverEffect hover:text-color-2"
           >
             <NavButton
-              title="Booking"
+              title="Захиалга өгөх"
               icon={<Bookmark className="text-xl" />}
             />
           </a>
@@ -89,7 +89,7 @@ const Navbar = () => {
             className="flex items-center gap-1 py-2 hoverEffect hover:text-color-2"
             onClick={toggleNavigation}
           >
-            <NavButton title="Menu" icon={<Hamburger className="text-xl" />} />
+            <NavButton title="Цэс" icon={<Hamburger className="text-xl" />} />
           </button>
         </div>
       </div>

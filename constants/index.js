@@ -7,6 +7,7 @@ import {
   PhoneIcon,
   TwitterIcon,
 } from "./icons";
+import { Strings } from "./string";
 
 export const phone = "(+976) 0000-0000";
 export const logo = "/img/logo.png";
@@ -26,7 +27,7 @@ export const navigation = [
   },
   {
     id: "2",
-    title: "Прожектууд",
+    title: "Төслүүд",
     url: "/project",
   },
   {
@@ -43,32 +44,27 @@ export const navigation = [
 
 export const project = [
   {
-    id: 0,
-    title: "Best Home Design",
-    image: bg,
-    description:
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptas neque explicabo blanditiis minus eius excepturi non consequatur, nobis enim ipsa itaque placeat, hic doloribus quia tempora tempore aspernatur accusamus!",
+    title: "Бидний үйлчилгээ",
+    image: "hero-bg.jpg",
+    description: "Барилга угсралт\nБарилгын дотор, гадна засал\nЦахилгаан холбоо, дохиолол\nГадна ногоон байгууламж, зүлэгжүүлэлт, тохижилт\nЗүлэгний үрийн худалдаа\nХог ургамал, шарилж устгалын бодисын худалдаа"
   },
   {
-    id: 0,
-    title: "Best Home Design",
-    image: bg,
+    title: "АЛСЫН ХАРАА",
+    image: "hero-bg.jpg",
     description:
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptas neque explicabo blanditiis minus eius excepturi non consequatur, nobis enim ipsa itaque placeat, hic doloribus quia tempora tempore aspernatur accusamus!",
+      "Үйлчлүүлэгчийн итгэлийг хүлээсэн, салбартаа манлайлагч мэргэжлийн цогц үйлчилгээ бүхий итгэл даагч, хариуцлагатай байгууллага. ТАНЫ ИТГЭЛ, БИДНИЙ ЗҮТГЭЛ",
   },
   {
-    id: 0,
-    title: "Best Home Design",
-    image: bg,
+    title: "ЭРХЭМ ЗОРИЛГО",
+    image: "hero-bg.jpg",
     description:
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptas neque explicabo blanditiis minus eius excepturi non consequatur, nobis enim ipsa itaque placeat, hic doloribus quia tempora tempore aspernatur accusamus!",
+      "БАЙГАЛЬ ОРЧИНД ЭЭЛТЭЙ, ДЭВШИЛТЭТ ТЕХНИК ТЕХНОЛОГИЙГ АШИГЛАн ЭХ ОРНЫ БОЛОН ОЛОН УЛСЫН СТАНДАРТ ХАНГАХ. ",
   },
   {
-    id: 0,
-    title: "Best Home Design",
-    image: bg,
+    title: "ҮНЭТ ЗҮЙЛС",
+    image: "hero-bg.jpg",
     description:
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptas neque explicabo blanditiis minus eius excepturi non consequatur, nobis enim ipsa itaque placeat, hic doloribus quia tempora tempore aspernatur accusamus!",
+      "Хөдөлмөрийн аюулгүй байдал, эрүүл ахуй НЭГДҮГЭЭРТ\nАЮУЛГҮЙ орчинд ажиллах ЭРҮҮЛ ажилтан\nХүний эрүүл, аюулгүй орчинг бий болгох",
   },
 ];
 
@@ -76,17 +72,17 @@ export const achievements = [
   {
     id: 0,
     count: 258,
-    title: "Projects",
+    title: Strings.projects,
   },
   {
     id: 1,
     count: 143,
-    title: "Clients",
+    title: Strings.client,
   },
   {
     id: 2,
-    count: 19,
-    title: "Awards",
+    count: 2,
+    title: Strings.certificate,
   },
 ];
 
@@ -164,7 +160,7 @@ export const sponsors = [
 
 export const footerData = [
   {
-    title: "Quick Contact",
+    title: "Хаяг",
     links: [
       {
         info: "3561 Aaron Smith Drive, Columbia",
@@ -173,43 +169,43 @@ export const footerData = [
         info: "Pennsylvania, USA 17512",
       },
       {
-        info: "info@sitename.com",
+        info: "admin@myanganiibatalgaa.mn",
       },
     ],
   },
   {
-    title: "Useful Link",
+    title: "Бусад холбоосууд",
     links: [
       {
-        info: "TERMS & CONDITION",
+        info: "Нөхцөл",
       },
       {
-        info: "PRIVACY POLICY",
+        info: "Нууцлалын бодлого",
       },
       {
-        info: "HELP & CONTACT",
+        info: "Тусламж",
       },
-      {
-        info: "Contact",
-      },
+      // {
+      //   info: "Contact",
+      // },
       {
         info: "FAQ",
       },
     ],
   },
   {
-    title: "Company",
+    title: "Компани",
     links: [
       {
-        info: "About us",
+        info: "Бидний тухай",
         link: "/about",
       },
       {
-        info: "Portfolios",
+        info: "Төслүүд",
         link: "/portfolio",
       },
       {
-        info: "Contact",
+        info: "Холбоо барих",
         link: "/contact",
       },
     ],

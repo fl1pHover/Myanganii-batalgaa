@@ -22,7 +22,7 @@ const Sponsers = () => {
         <h1
           className={mergeNames("sectionTitle", "text-color-white text-center")}
         >
-          Sponsors
+          Харилцагчид
         </h1>
         <div className="flex flex-row flex-wrap justify-around w-full gap-20">
           {sponsors.map((i) => (
