@@ -11,7 +11,6 @@ import Footer from "@/components/ui/Footer";
 import { Suspense } from "react";
 import Loading from "./loading";
 import Provider from "@/components/Provider";
-import { ColorSchemeScript } from "@mantine/core";
 
 export const metadata = {
   title: "Мянганы баталгаа",

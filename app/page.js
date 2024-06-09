@@ -14,7 +14,7 @@ export default function Home() {
     <section className="flex flex-col">
       <Hero />
       <div className="flex flex-col gap-24">
-        <AboutHero />
+        <AboutHero more />
         <AchievementHero />
       </div>
       <ProjectHero />

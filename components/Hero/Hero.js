@@ -9,7 +9,7 @@ import ScrollTop from "../ui/ScrollTop";
 
 const Hero = () => {
   return (
-    <section id="hero">
+    <section id="hero" className="py-10 lg:py-0">
       <div className="w-full h-[60vh] xs:h-[80vh] relative">
         <div className="w-full h-full">
           <img
@@ -37,7 +37,7 @@ const Hero = () => {
       </div>
       <Container
         className={mergeNames(
-          "px-8 py-8 bg-white grid grid-cols-1 lg:grid-cols-4 gap-4 justify-between place-items-center",
+          "px-8 py-8 bg-white grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 justify-between place-items-center",
           "lg:-translate-y-[100px]"
         )}
       >

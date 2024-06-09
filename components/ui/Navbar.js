@@ -42,6 +42,7 @@ const Navbar = () => {
   }, []);
 
   const pathname = usePathname();
+  const bodyStyle = document.body.style;
 
   return (
     <nav className="relative text-black">
@@ -96,7 +97,7 @@ const Navbar = () => {
 
       <div
         className={mergeNames(
-          openNavigation ? "visible opacity-100" : "invisible opacity-0",
+          openNavigation ? ["visible opacity-100"] : "invisible opacity-0",
           "navbar_mobile transition-all duration-400 "
         )}
       >
